@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/roggiedc/MA#readme",
   "dependencies": {
+    "jquery": "^3.5.1",
     "swiper": "^4.4.6"
   }
 }
