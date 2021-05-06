@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/roggiedc/MA/issues"
   },
-  "homepage": "https://github.com/roggiedc/MA#readme"
+  "homepage": "https://github.com/roggiedc/MA#readme",
+  "dependencies": {
+    "swiper": "^4.4.6"
+  }
 }
