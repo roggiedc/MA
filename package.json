@@ -20,6 +20,7 @@
     "html5shiv": "^3.7.3",
     "jquery": "^3.5.1",
     "respond.js": "^1.4.2",
-    "swiper": "^4.4.6"
+    "swiper": "^4.4.6",
+    "tether": "^1.4.0"
   }
 }
