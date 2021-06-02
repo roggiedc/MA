@@ -7,7 +7,7 @@ npm install jquery@3.5.1
 
 npm install respond.js@1.4.2
 
-npm install swiper@4.4.6
+npm install swiper@6.5.6
 
 npm install tether@1.4.0
 
