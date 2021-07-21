@@ -35,12 +35,21 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
       "id": "onesignal-cordova-plugin.Subscription",
       "file": "plugins/onesignal-cordova-plugin/www/Subscription.js",
       "pluginId": "onesignal-cordova-plugin"
+    },
+    {
+      "id": "cordova-plugin-ios-decimal-keyboard.decimalKeyboard",
+      "file": "plugins/cordova-plugin-ios-decimal-keyboard/www/decimal-keyboard.js",
+      "pluginId": "cordova-plugin-ios-decimal-keyboard",
+      "clobbers": [
+        "window.DecimalKeyboard"
+      ]
     }
   ];
   module.exports.metadata = {
     "cordova-plugin-firebasex": "12.1.0",
     "cordova-plugin-whitelist": "1.3.4",
     "cordova-plugin-androidx-adapter": "1.1.3",
-    "onesignal-cordova-plugin": "3.0.0-beta1"
+    "onesignal-cordova-plugin": "3.0.0-beta1",
+    "cordova-plugin-ios-decimal-keyboard": "1.0.1"
   };
 });

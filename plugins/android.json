@@ -38,6 +38,9 @@
     },
     "onesignal-cordova-plugin": {
       "PACKAGE_NAME": "com.example.hello"
+    },
+    "cordova-plugin-ios-decimal-keyboard": {
+      "PACKAGE_NAME": "com.example.hello"
     }
   },
   "dependent_plugins": {}
