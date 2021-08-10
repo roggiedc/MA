@@ -19,3 +19,8 @@ cordova plugin add cordova-plugin-androidx-adapter
 
 cordova plugin add onesignal-cordova-plugin --save
 
+npm install tether@2.0.0
+
+npm install jquery@3.6.0
+
+npm install swiper@6.8.1
