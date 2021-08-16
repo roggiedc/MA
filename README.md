@@ -11,7 +11,7 @@ npm install swiper@6.8.1
 
 npm install tether@2.0.0
 
-cordova plugin add cordova-plugin-firebasex
+cordova plugin add cordova-plugin-firebasex@13.0.1
 
 cordova platform rm android && cordova platform add android@latest
 
