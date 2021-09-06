@@ -56,7 +56,7 @@
     "jquery": "^3.6.0",
     "onesignal-cordova-plugin": "3.0.0-beta1",
     "respond.js": "^1.4.2",
-    "swiper": "^6.8.1",
+    "swiper": "^6.8.2",
     "tether": "^2.0.0"
   }
 }
