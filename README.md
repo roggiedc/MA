@@ -1,4 +1,5 @@
 # MA
+
 Mobile Applications
 
 npm install html5shiv
@@ -18,3 +19,7 @@ cordova platform rm android && cordova platform add android@latest
 cordova plugin add cordova-plugin-androidx-adapter
 
 cordova plugin add onesignal-cordova-plugin --save
+
+npm install plist@3.0.4
+
+npm install xmldom@0.6.0

@@ -55,8 +55,10 @@
     "html5shiv": "^3.7.3",
     "jquery": "^3.6.0",
     "onesignal-cordova-plugin": "3.0.0-beta1",
+    "plist": "^3.0.4",
     "respond.js": "^1.4.2",
     "swiper": "^6.8.1",
-    "tether": "^2.0.0"
+    "tether": "^2.0.0",
+    "xmldom": "^0.6.0"
   }
 }
