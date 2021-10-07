@@ -1,12 +1,10 @@
 {
   "_from": "cordova-plugin-firebasex",
-  "_id": "cordova-plugin-firebasex@12.1.0",
+  "_id": "cordova-plugin-firebasex@13.0.1",
   "_inBundle": false,
-  "_integrity": "sha512-TCTzneTynBwY/qPcPwvxPBV9X18hfLcsmfafBW0b0oMLGJ0gbr39E7I6+9Hck4woh0F6sqc8/6MKas9Bhd8ihw==",
+  "_integrity": "sha512-p9V8tJzT5ouRKhfz9Vo6uEdv0BvMJldXBrrw61H/0smT5JzJFcHu/BekhbIsF5yrpBSIwdSK15JA04JA4EtL3w==",
   "_location": "/cordova-plugin-firebasex",
-  "_phantomChildren": {
-    "lru-cache": "6.0.0"
-  },
+  "_phantomChildren": {},
   "_requested": {
     "type": "tag",
     "registry": true,
@@ -21,10 +19,10 @@
     "#DEV:/",
     "#USER"
   ],
-  "_resolved": "https://registry.npmjs.org/cordova-plugin-firebasex/-/cordova-plugin-firebasex-12.1.0.tgz",
-  "_shasum": "a0a38498670f7aa806528f2a0d42203fb7272210",
+  "_resolved": "https://registry.npmjs.org/cordova-plugin-firebasex/-/cordova-plugin-firebasex-13.0.1.tgz",
+  "_shasum": "e5c8c4283f9e24ff1f834084af00059cad267e21",
   "_spec": "cordova-plugin-firebasex",
-  "_where": "C:\\Users\\tech\\Documents\\GitHub\\MA",
+  "_where": "C:\\Users\\jason\\OneDrive\\Documents\\GitHub\\MA",
   "author": {
     "name": "Dave Alden"
   },
@@ -71,5 +69,5 @@
     "version": "node ./bump-version.js && git add -A plugin.xml"
   },
   "types": "./types/index.d.ts",
-  "version": "12.1.0"
+  "version": "13.0.1"
 }
