@@ -35,10 +35,6 @@ exports._onInstallationIdChangeCallback = function(installationId){
  **************/
 
 // Notifications
-exports.getId = function (success, error) {
-  exec(success, error, "FirebasePlugin", "getId", []);
-};
-
 exports.getToken = function (success, error) {
   exec(success, error, "FirebasePlugin", "getToken", []);
 };
@@ -80,6 +76,10 @@ exports.setAutoInitEnabled = function (enabled, success, error) {
 };
 
 // Notifications - iOS-only
+exports.onOpenSettings = function (success, error) {
+  exec(success, error, "FirebasePlugin", "onOpenSettings", []);
+};
+
 exports.setBadgeNumber = function (number, success, error) {
     exec(success, error, "FirebasePlugin", "setBadgeNumber", [number]);
 };
@@ -88,8 +88,8 @@ exports.getBadgeNumber = function (success, error) {
     exec(success, error, "FirebasePlugin", "getBadgeNumber", []);
 };
 
-exports.grantPermission = function (success, error) {
-    exec(ensureBooleanFn(success), error, "FirebasePlugin", "grantPermission", []);
+exports.grantPermission = function (success, error, requestWithProvidesAppNotificationSettings) {
+    exec(ensureBooleanFn(success), error, "FirebasePlugin", "grantPermission", [ensureBoolean(requestWithProvidesAppNotificationSettings)]);
 };
 
 exports.hasPermission = function (success, error) {
@@ -438,6 +438,11 @@ exports.removeFirestoreListener = function (success, error, listenerId) {
 exports.functionsHttpsCallable = function (name, args, success, error) {
   if(typeof name !== 'string') return error("'collection' must be a string specifying the Firestore collection name");
   exec(success, error, "FirebasePlugin", "functionsHttpsCallable", [name, args]);
+};
+
+// Installations
+exports.getId = function (success, error) {
+    exec(success, error, "FirebasePlugin", "getId", []);
 };
 
 exports.getInstallationId = function (success, error) {
