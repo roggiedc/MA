@@ -52,7 +52,6 @@
     ]
   },
   "dependencies": {
-    "@xmldom/xmldom": "^0.7.5",
     "html5shiv": "^3.7.3",
     "jquery": "^3.6.0",
     "onesignal-cordova-plugin": "3.0.0-beta1",
