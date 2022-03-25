@@ -51,16 +51,20 @@
       "android"
     ]
   },
+  "overrides": {
+    "recursive-readdir@^2.2.2": {
+      "minimatch": "3.0.5"
+    }
+  },
   "dependencies": {
     "brace-expansion": "^2.0.1",
     "concat-map": "^0.0.1",
     "html5shiv": "^3.7.3",
     "jquery": "^3.6.0",
-    "minimatch": "^3.0.5",
-    "onesignal-cordova-plugin": "3.0.0-beta1",
     "recursive-readdir": "^2.2.2",
     "respond.js": "^1.4.2",
     "swiper": "^6.8.4",
-    "tether": "^2.0.0"
+    "tether": "^2.0.0",
+    "onesignal-cordova-plugin": "3.0.2"
   }
 }
