@@ -62,5 +62,10 @@
     "respond.js": "^1.4.2",
     "swiper": "^6.8.4",
     "tether": "^2.0.0"
+  },
+  "overrides": {
+    "recursive-readdir@^2.2.2": {
+      "minimatch": "3.0.5"
+    }
   }
 }
