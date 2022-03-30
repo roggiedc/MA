@@ -38,10 +38,12 @@
     ]
   },
   "dependencies": {
-    "plist": "^3.0.1",
     "semver": "^7.3.2",
     "xcode": "^3.0.1",
     "xml-js": "^1.6.11"
+  },
+  "overrides": {
+    "plist": "^3.0.1"
   },
   "deprecated": false,
   "description": "Cordova plugin for Google Firebase",
