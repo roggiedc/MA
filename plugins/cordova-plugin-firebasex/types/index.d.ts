@@ -35,14 +35,9 @@ export interface FirebasePlugin {
         success: (value: object) => void,
         error: (err: string) => void
     ): void
-    onOpenSettings(
-        success: () => void,
-        error: (err: string) => void
-    ): void
     grantPermission(
         success: (value: boolean) => void,
-        error: (err: string) => void,
-        requestWithProvidesAppNotificationSettings?: boolean
+        error: (err: string) => void
     ): void
     hasPermission(
         success: (value: boolean) => void,

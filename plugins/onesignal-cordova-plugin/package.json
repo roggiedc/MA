@@ -1,8 +1,8 @@
 {
   "_from": "onesignal-cordova-plugin",
-  "_id": "onesignal-cordova-plugin@3.0.0-beta1",
+  "_id": "onesignal-cordova-plugin@2.11.3",
   "_inBundle": false,
-  "_integrity": "sha512-VTBKJms79a1yRMMjh25XSlNge4zDOcljZ04HXEfgfYM1HJZNN58JpRX0OBpflRfD9rVvFPWEm89tulYK8RmeOw==",
+  "_integrity": "sha512-vWPmXR4qML06Fg785bg6SW3mOJImQteZKqEZqKBO5vC0cvtLQXofhTdUAOFAQRlBAUavZbEIXF7ZGFeQCA1ukA==",
   "_location": "/onesignal-cordova-plugin",
   "_phantomChildren": {},
   "_requested": {
@@ -19,10 +19,10 @@
     "#USER",
     "/"
   ],
-  "_resolved": "https://registry.npmjs.org/onesignal-cordova-plugin/-/onesignal-cordova-plugin-3.0.0-beta1.tgz",
-  "_shasum": "6b035d560945cc6846381f6e51d922b1948bf6ef",
+  "_resolved": "https://registry.npmjs.org/onesignal-cordova-plugin/-/onesignal-cordova-plugin-2.11.3.tgz",
+  "_shasum": "3f105562f3b7dac9b40a05246df18ca52c51979b",
   "_spec": "onesignal-cordova-plugin",
-  "_where": "C:\\Users\\tech\\Documents\\GitHub\\MA",
+  "_where": "C:\\Project\\BCRemit\\Mobile\\Live\\Android",
   "author": {
     "name": "Josh Kasten, Brad Hesse, Rodrigo Gomez-Palacio"
   },
@@ -35,6 +35,7 @@
     "platforms": [
       "android",
       "ios",
+      "windows",
       "amazon-fireos"
     ]
   },
@@ -84,11 +85,12 @@
   "platforms": [
     "android",
     "ios",
+    "windows",
     "amazon-fireos"
   ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/onesignal/OneSignal-Cordova-SDK.git"
   },
-  "version": "3.0.0-beta1"
+  "version": "2.11.3"
 }
