@@ -1,0 +1,147 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the Beneficiary Details page.
+// -----------------------------------------------------------------------------
+
+.beneficiary-details {
+  .text-holder {
+    margin-top: 106px;
+
+    .text-bold {
+      margin: 0;
+
+      font-family: $font-avenir;
+      font-size: 25px;
+      font-weight: 600;
+      color: $prussian-blue;
+    }
+
+    .text {
+      margin: 2px 0 0;
+
+      font-family: $font-avenir;
+      font-size: 14.7px;
+      font-weight: 400;
+      color: $light-slate-grey;
+    }
+
+    .text-bank {
+      margin: 0;
+
+      font-family: $font-avenir;
+      font-size: 14.5px;
+      font-weight: 400;
+      line-height: 23px;
+      color: $light-slate-grey;
+      text-transform: uppercase;
+    }
+
+    .vertical-line {
+      position: relative;
+      bottom: 2px;
+      z-index: -1;
+
+      margin: 0 5px;
+      
+      font-size: 14px;
+    }
+  }
+
+  .btn-holder {
+    position: inherit;
+    
+    display: flex;
+    flex-direction: column;
+    margin-top: 42px;
+
+    .btn-choice {
+      margin-bottom: 12px;
+    }
+  }
+
+  .transactions-holder {
+    position: relative;
+    bottom: 24px;
+    z-index: -1;
+
+    margin-top: 39px;
+
+    .title {
+      margin-top: 15px;
+      
+      font-size: 23px;
+      color: $prussian-blue;
+    }
+
+    .transaction-box {
+      position: relative;
+      bottom: 9px;
+
+      display: flex;
+      flex-direction: column;
+      padding: 16px 21px;
+      margin-bottom: 16px;
+
+      .text-bold {
+        margin: 0 0 3px;
+
+        font-family: $font-avenir;
+        font-size: 18.9px;
+        font-weight: 600;
+        color: $prussian-blue;
+        text-transform: uppercase;
+      }
+
+      .text-payment {
+        margin: 0 0 2px;
+
+        font-family: $font-avenir;
+        font-size: 14.7px;
+        font-weight: 400;
+        color: $light-slate-grey;
+      }
+
+      .text-blue {
+        font-family: $font-avenir;
+        font-weight: 600;
+        color: $blue;
+      }
+
+      .text-status {
+        margin: 0 0 2px;
+
+        font-family: $font-avenir;
+        font-weight: 600;
+        font-size: 13.5px;
+        color: $prussian-blue;
+      }
+
+      .text-date {
+        margin: 0;
+
+        font-family: $font-avenir;
+        font-weight: 600;
+        font-size: 12.6px;
+      }
+    }
+  }
+}
+
+.header {
+  .title-newbeneficiary {
+    position: relative;
+    left: 29px;
+  }
+
+  .back-beneficiary {
+    position: absolute;
+    top: 6px;
+    left: -2px;
+  }
+
+  .close-beneficiary {
+    position: absolute;
+    top: 7px;
+  }
+}

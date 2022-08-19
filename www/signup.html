@@ -1,0 +1,887 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta
+      name="viewport"
+      content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, viewport-fit=cover"
+    />
+    <meta name="facebook-domain-verification" content="yffgkm3rbj1wpy0b1ghgrscxbmp4p3" />
+    <title>BC Remit | Sign Up 1</title>
+    <script type="text/javascript" src="cordova.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/main.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/intlTelInput.css" />
+
+    <link rel="stylesheet" type="text/css" href="css/jquery.modal.min.css" />
+    <!-- Facebook Pixel Code -->
+    <script>
+      !(function (f, b, e, v, n, t, s) {
+        if (f.fbq) return;
+        n = f.fbq = function () {
+          n.callMethod
+            ? n.callMethod.apply(n, arguments)
+            : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n;
+        n.push = n;
+        n.loaded = !0;
+        n.version = "2.0";
+        n.queue = [];
+        t = b.createElement(e);
+        t.async = !0;
+        t.src = v;
+        s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s);
+      })(
+        window,
+        document,
+        "script",
+        "https://connect.facebook.net/en_US/fbevents.js"
+      );
+      fbq("init", "407432117177223");
+      fbq("track", "CompleteRegistration");
+    </script>
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        src="https://www.facebook.com/tr?id=407432117177223&ev=CompleteRegistration
+    &noscript=1"
+      />
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+  </head>
+  <body>
+    <header class="header db-nav">
+      <div class="container container-custom">
+        <div class="header-inner">
+          <h2 class="header-title title">Sign Up</h2>
+          <a href="index.html" class="btn-close">
+            <svg
+              version="1.1"
+              id="Capa_1"
+              class="close-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              x="0px"
+              y="0px"
+              viewBox="0 0 47.971 47.971"
+              xml:space="preserve"
+            >
+              <g>
+                <path
+                  d="M28.228,23.986L47.092,5.122c1.172-1.171,1.172-3.071,0-4.242c-1.172-1.172-3.07-1.172-4.242,0L23.986,19.744L5.121,0.88
+              c-1.172-1.172-3.07-1.172-4.242,0c-1.172,1.171-1.172,3.071,0,4.242l18.865,18.864L0.879,42.85c-1.172,1.171-1.172,3.071,0,4.242
+              C1.465,47.677,2.233,47.97,3,47.97s1.535-0.293,2.121-0.879l18.865-18.864L42.85,47.091c0.586,0.586,1.354,0.879,2.121,0.879
+              s1.535-0.293,2.121-0.879c1.172-1.171,1.172-3.071,0-4.242L28.228,23.986z"
+                />
+              </g>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-------------splash----------------------------------->
+    <main class="splash-screen" id="wait" style="display: none">
+      <div class="container">
+        <div class="content-holder">
+          <div class="loader-holder">
+            <div class="loader">
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+              <div class="dot"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-------------sign up part 1--------------------------->
+    <main class="sign-up sign-up-first" id="part1">
+      <div class="container">
+        <div
+          style="color: #4800ff; font-size: medium; display: none"
+          id="alertBox"
+        >
+          <span
+            class="closebtn"
+            onclick="this.parentElement.style.display='none';"
+            style="float: right"
+            >&times;</span
+          >
+          <span id="msg">0</span>
+        </div>
+        <form>
+          <div class="input-holder">
+            <p class="input-title">Email Address</p>
+            <input
+              class="input-textbox"
+              type="email"
+              id="txtEmail1"
+              onclick="clearInputError('err1');"
+              value=""
+              required
+              autocomplete="off"
+            />
+            <span style="color: #f00; font-size: small" id="err1"></span>
+          </div>
+          <div class="input-holder">
+            <p class="input-title">Re-type Email Address</p>
+            <input
+              class="input-textbox"
+              type="email"
+              id="txtEmail2"
+              onclick="clearInputError('err2');"
+              value=""
+              required
+              autocomplete="off"
+            />
+            <span style="color: #f00; font-size: small" id="err2"></span>
+          </div>
+          <div class="input-holder">
+            <p class="input-title">Create Password</p>
+            <div class="input-wrapper">
+              <input
+                class="input-textbox"
+                onchange="checkSPasswordStrength();"
+                onkeyup="this.onchange();"
+                onpaste="this.onchange();"
+                oninput="this.onchange();"
+                type="password"
+                id="txtPwd1"
+                onclick="clearInputError('err3');"
+                value=""
+                required
+                autocomplete="off"
+              />
+              <button class="btn-pass" type="button" style="margin: 0%">
+                <img
+                  src="assets/images/show-pass.png"
+                  id="txtPwd1-show"
+                  onclick="toggle_password('txtPwd1');"
+                />
+              </button>
+            </div>
+            <span style="color: #f00; font-size: small" id="err3"></span>
+          </div>
+          <p id="password-strength-text" style="color: #0026ff"></p>
+          <div class="input-holder">
+            <p class="input-title">Re-type Password</p>
+            <div class="input-wrapper">
+              <input
+                class="input-textbox"
+                type="password"
+                id="txtPwd2"
+                data-val=""
+                onclick="clearInputError('err4');"
+                value=""
+                required
+                autocomplete="off"
+              />
+              <button class="btn-pass" type="button" style="margin: 0%">
+                <img
+                  src="assets/images/show-pass.png"
+                  id="txtPwd2-show"
+                  onclick="toggle_password('txtPwd2');"
+                />
+              </button>
+            </div>
+            <span style="color: #f00; font-size: small" id="err4"></span>
+          </div>
+          <p class="sign-up-terms">
+            By clicking Sign Up, you agree with BCRemit's
+            <span class="terms" onclick="openWin('terms');"
+              >Terms & Conditions</span
+            >
+            and
+            <span class="terms" onclick="openWin('privacy');"
+              >Privacy Policy</span
+            >
+          </p>
+          <div class="btn-wrapper btn-wrapper-signup">
+            <a
+              href="#"
+              type="button"
+              class="btn btn-blue btn-new"
+              onclick="signup('01');"
+              >Sign Up</a
+            >
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <!-------------sign up part 2--------------------------->
+    <main class="sign-up" id="part2" style="display: none">
+      <div class="section-form">
+        <div class="container">
+          <div
+            style="color: #4800ff; font-size: medium; display: none"
+            id="alertBox2"
+          >
+            <span
+              class="closebtn"
+              onclick="this.parentElement.style.display='none';"
+              style="float: right"
+              >&times;</span
+            >
+            <span id="msg2">0.</span>
+          </div>
+          <h2 class="title">Your Details</h2>
+          <form>
+            <div class="input-holder">
+              <p class="input-title">First Name</p>
+              <input
+                class="input-textbox"
+                type="text"
+                id="txtFirstName"
+                name="firstName"
+                onclick="clearInputError('err5');"
+                value=""
+                required
+                autocomplete="off"
+              />
+              <span style="color: #f00; font-size: small" id="err5"></span>
+            </div>
+            <div class="input-holder">
+              <p class="input-title">Middle Name (Optional)</p>
+              <input
+                class="input-textbox"
+                type="text"
+                id="txtMiddleName"
+                name="middleName"
+                onclick="clearInputError('err41');"
+                value=""
+                required
+                autocomplete="off"
+              />
+              <span style="color: #f00; font-size: small" id="err101"></span>
+            </div>
+            <div class="input-holder">
+              <p class="input-title">Last Name</p>
+              <input
+                class="input-textbox"
+                type="text"
+                id="txtLastName"
+                name="lastName"
+                onclick="clearInputError('err6');"
+                value=""
+                required
+                autocomplete="off"
+              />
+              <span style="color: #f00; font-size: small" id="err6"></span>
+            </div>
+            <div class="input-holder">
+              <p class="input-title">Country of Residence</p>
+              <select class="input-select" id="countryOfResidences"></select>
+              <span style="color: #f00; font-size: small" id="err775"></span>
+            </div>
+            <div class="input-holder">
+              <p class="input-title">Date of Birth (DD/MM/YYYY)</p>
+              <input
+                class="input-textbox"
+                type="text"
+                name="birthDate"
+                value=""
+                onfocus="setDate();"
+                onclick="clearInputError('err7');"
+                readonly="readonly"
+                id="txtDOB"
+                required
+                autocomplete="off"
+              />
+              <span style="color: #f00; font-size: small" id="err7"></span>
+            </div>
+            <div class="input-holder">
+              <p class="input-title">Source of Funds</p>
+              <select class="input-select" id="sourceOfFundsDD"></select>
+              <span style="color: #f00; font-size: small" id="err77"></span>
+            </div>
+            <p style="font-size: 15px; text-align: center">
+              Required by law to collect this information
+            </p>
+            <div class="btn-wrapper bottom">
+              <a
+                href="#"
+                type="button"
+                class="btn btn-blue btn-new"
+                onclick="signup('02');"
+                >Next</a
+              >
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!---------------sign up part 3 ----------------------->
+    <main class="sign-up" id="part3" style="display: none">
+      <div class="section-form">
+        <div class="container">
+          <div
+            style="color: #4800ff; font-size: medium; display: none"
+            id="alertBox3"
+          >
+            <span
+              class="closebtn"
+              onclick="this.parentElement.style.display='none';"
+              style="float: right"
+              >&times;</span
+            >
+            <span id="msg3"></span>
+          </div>
+          <h2 class="title">Your Address</h2>
+          <form>
+            <div class="input-holder">
+              <p class="input-title">Country</p>
+              <label
+                id="ddlCountry"
+                style="color: #45b3e0; font-weight: 500"
+              ></label>
+            </div>
+            <div class="input-holder">
+              <p class="input-title" id="SignUpCode">Post Code</p>
+              <input
+                class="input-textbox"
+                id="txtPostCode"
+                type="text"
+                onclick="clearInputError('err9');"
+                onblur="getPostCodeLookup('registration');"
+                required
+                autocomplete="off"
+              />
+              <span style="color: #f00; font-size: small" id="err9"></span>
+            </div>
+            <div class="input-holder" id="add_lookup">
+              <p class="input-title">Address Lookup</p>
+              <select
+                class="input-select"
+                id="txtPostCodeLookup"
+                onchange="populateAddress();"
+              >
+                <optgroup label="Select"></optgroup>
+              </select>
+            </div>
+            <div class="input-holder">
+              <p class="input-title">Address Line 1</p>
+              <input
+                class="input-textbox"
+                id="txtAddr1"
+                type="text"
+                name="address1"
+                onclick="clearInputError('err10');"
+                value=""
+                required
+                autocomplete="off"
+              />
+              <span style="color: #f00; font-size: small" id="err10"></span>
+            </div>
+            <div class="input-holder">
+              <p class="input-title">Address Line 2 (Optional)</p>
+              <input
+                class="input-textbox"
+                id="txtAddr2"
+                type="text"
+                name="address2"
+                onclick="clearInputError('err11');"
+                value=""
+                required
+                autocomplete="off"
+              />
+              <span style="color: #f00; font-size: small" id="err11"></span>
+            </div>
+            <div class="input-holder">
+              <p class="input-title">City/Town</p>
+              <input
+                class="input-textbox"
+                id="txtAddr3"
+                type="text"
+                name="city"
+                onclick="clearInputError('err12');"
+                value=""
+                required
+                autocomplete="off"
+              />
+              <span style="color: #f00; font-size: small" id="err12"></span>
+            </div>
+            <div class="input-holder" id="12">
+              <p class="input-title">Mobile Number</p>
+              <input
+                class="input-textbox"
+                id="txtMobile"
+                onkeyup="this.value = this.value.replace(/[^0-9]/g,'')"
+                onkeypress="isInputNumber(event);"
+                type="tel"
+                name="mmobileNum"
+                onclick="clearInputError('err8');"
+                value=""
+                required
+                autocomplete="off"
+              /><br />
+              <span style="color: #f00; font-size: small" id="err8"></span>
+              <div id="10"></div>
+            </div>
+          </form>
+          <div class="btn-wrapper bottom">
+            <a
+              href="#ex1"
+              rel="modal:open"
+              type="button"
+              class="btn btn-blue btn-new"
+              onclick="getMobileNumber()"
+              id="save_cust_data"
+              >Save</a
+            >
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div id="ex1" class="modal" style="display: none">
+      <p style="text-align: center">
+        <label
+          class="header-title title"
+          style="text-align: center; color: #05294b"
+          >Verification Code</label
+        ><br />
+        <label style="text-align: center; font-size: medium; color: #758898"
+          >For your security, we will send an SMS Verification Code to your
+          mobile number.</label
+        ><br /><br />
+        <label
+          class="header-title title"
+          style="font: medium; color: #237afc"
+          id="numberToVerify"
+        ></label>
+      </p>
+      <p style="text-align: center; font-size: medium">
+        Is your mobile number correct?
+      </p>
+      <div style="display: flex; justify-content: space-between">
+        <a
+          href="#"
+          class="btn btn-border-blue btn-new-radius"
+          rel="modal:close"
+          style="color: #888; border: 1px solid #888; width: 45%"
+          >Edit</a
+        >
+        <a
+          href="#"
+          class="btn btn-blue btn-new"
+          onclick="passMobNumToSendCode()"
+          style="color: white; width: 45%"
+          >Yes</a
+        >
+      </div>
+    </div>
+
+    <footer
+      class="footerConnection no-internet-connection"
+      style="display: none"
+    >
+      <div
+        style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 5vh;
+        "
+      >
+        <img
+          src=""
+          alt=""
+          height="20px"
+          width="20px"
+          class="footerConnectionImage"
+        />
+        <span class="foooterConnectionMsg" style="margin-left: 3%"></span>
+      </div>
+    </footer>
+
+    <input id="txtAddrID" type="hidden" />
+    <script src="./scripts/vendors/jquery-3.0.0.min.js"></script>
+    <script src="./scripts/vendors/jquery.modal.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script src="js/intlTelInput.js"></script>
+    <script type="text/javascript" src="js/defaultJSONData.js"></script>
+    <script src="./scripts/vendors/jquery.min.js"></script>
+    <script src="./scripts/vendors/tether.min.js"></script>
+    <script src="./scripts/vendors/swiper.min.js"></script>
+    <script src="./scripts/vendors/jquery.mask.min.js"></script>
+    <script src="./scripts/vendors/jquery.passwordify.min.js"></script>
+    <link href="./css/datepicker.min.css" rel="stylesheet" type="text/css" />
+    <script src="./js/datepicker.min.js"></script>
+    <script src="./js/datepicker.js"></script>
+    <script src="./js/datepicker.en.js"></script>
+    <script src="./scripts/core/base.js"></script>
+    <script src="./scripts/modules/theme-module.js"></script>
+    <script src="./scripts/bootstrapper.js"></script>
+    <script type="text/javascript">
+      storage.setItem("NOW", "signup");
+      $(document).ready(function () {
+        storage.setItem(
+          "lblmsg",
+          "Sign up was successful. Add beneficiary to get started!"
+        );
+        $("#txtDOB").datepicker({
+          language: "en",
+          view: "years",
+          dateFormat: "dd/mm/yyyy",
+          autoClose: true,
+          ignoreReadonly: true,
+          allowInputToggle: true,
+        });
+
+        storage.setItem("statusVerification", 1);
+        getMyIP();
+      });
+
+      function getCountryFlagsCcyResponse(res) {
+        console.log("<<<<<getCountryFlagsCcyResponse");
+        var obj = "";
+        var arr = [];
+        for (var i = 0; i <= res.pCode.length - 1; i++) {
+          obj = res.pCode[i];
+          if (obj.code === "UK") {
+            arr.push("GB");
+          } else {
+            arr.push(obj.code);
+          }
+        }
+        var input = document.querySelector("#txtMobile");
+        window.intlTelInput(input, {
+          dropdownContainer: document.getElementById("12"),
+          initialCountry: storage.getItem("ctry_code"),
+          onlyCountries: arr,
+          preferredCountries: ["cn", "jp"],
+          separateDialCode: true,
+          utilsScript: "js/utils.js",
+        });
+      }
+
+      function checkSPasswordStrength() {
+        var message = checkStrength($("#txtPwd1").val());
+        $("#password-strength-text").html("Strength: " + message);
+      }
+
+      var input = document.querySelector("#txtMobile");
+
+      //212.58. 246.0
+      //1.178.224.0
+      function getMyIP() {
+        $.getJSON(
+          "https://ipapi.co/" + storage.getItem("ip") + "/json",
+          function (json) {
+            var country = json.country;
+            if (country === "GB") {
+              country = "UK";
+            }
+            storage.setItem("country", country);
+            storage.setItem("ip", storage.getItem("ip"));
+            getCountryOfResidence();
+          }
+        );
+      }
+
+      function setDate() {
+        var dt = $("#txtDOB").val();
+        if (dt == "") {
+          $("#txtDOB")
+            .datepicker()
+            .data("datepicker")
+            .selectDate(new Date(1980, 0, 1));
+        }
+      }
+
+      function passMobNumToSendCode() {
+        signup("03");
+      }
+
+      function isInputNumber(evt) {
+        var ch = String.fromCharCode(evt.which);
+        if (!/[0-9]/.test(ch)) {
+          evt.preventDefault();
+        }
+      }
+
+      function getMobileNumber() {
+        var dialCode = window.intlTelInputGlobals
+          .getInstance(input)
+          .getSelectedCountryData().dialCode;
+        var country = $("#ddlCountry").text();
+        var postcode = $("#txtPostCode").val().trim().replace(/  +/g, " ");
+        var add1 = $("#txtAddr1").val().trim().replace(/  +/g, " ");
+        var add2 = $("#txtAddr2").val().trim().replace(/  +/g, " ");
+        var add3 = $("#txtAddr3").val().trim().replace(/  +/g, " ");
+        var mobile = $("#txtMobile").val();
+        var regex;
+        var errCount = 0;
+
+        if (country == "SPAIN") {
+          if (postcode == "" || postcode == null || postcode == undefined) {
+            $("#err9").html("Please enter your post code");
+            errCount += 1;
+          } else if (postcode.length > 10) {
+            $("#err9").html(
+              "Post code with greater than 10 characters long is invalid."
+            );
+            errCount += 1;
+          }
+        } else if (country == "UNITED KINGDOM") {
+          if (postcode == "" || postcode == null || postcode == undefined) {
+            $("#err9").html("Please enter your post code.");
+            errCount += 1;
+          } else if (postcode.length > 10) {
+            $("#err9").html(
+              "Post code with greater than 10 characters long is invalid."
+            );
+            errCount += 1;
+          }
+        }
+
+        if (add1.trim() == "" || add1.trim() == null) {
+          errCount += 1;
+          $("#err10").html("Please enter your address line 1. <br />");
+        } else {
+          if (add1.indexOf(forbiddenChar) > -1) {
+            errCount += 1;
+            $("#err10").html(
+              "Address Line 1 contains invalid character (" +
+                forbiddenChar +
+                ")."
+            );
+          }
+          if (add1.length > 150) {
+            $("#err10").html("Address Line 1 limit reach.");
+            errCount += 1;
+          }
+        }
+
+        if (add2.indexOf(forbiddenChar) > -1) {
+          errCount += 1;
+          $("#err11").html(
+            "Address Line 2 contains invalid character (" + forbiddenChar + ")."
+          );
+        }
+        if (add2.length > 150) {
+          $("#err11").html("Address Line 2 limit reach.");
+          errCount += 1;
+        }
+
+        if (add3.trim() == "" || add3.trim() == null) {
+          errCount += 1;
+          $("#err12").html("Please enter your city/town. <br />");
+          if (add3.indexOf(forbiddenChar) > -1) {
+            errCount += 1;
+            $("#err12").html(
+              "City/Town contains invalid character (" + forbiddenChar + ")."
+            );
+          }
+        }
+
+        if (mobile == "" || mobile == null || mobile == undefined) {
+          errCount += 1;
+          $("#err8").html("Please enter your mobile number. <br />");
+        } else {
+          var valid = /^[0-9+\ ]*$/.test(mobile);
+          var resMobile = mobile.startsWith("0");
+
+          if (valid == false) {
+            errCount += 1;
+            $("#err8").html("Invalid phone number. Only numbers are allowed.");
+          }
+
+          if (dialCode == "34") {
+            if (mobile.length > 10) {
+              errCount += 1;
+              $("#err8").html(
+                "Mobile number with greater than 10 digits long is invalid."
+              );
+            } else if (mobile.length < 9) {
+              errCount += 1;
+              $("#err8").html(
+                "Mobile number with less than 9 digits long is invalid."
+              );
+            }
+          } else {
+            if (mobile.length > 11) {
+              errCount += 1;
+              $("#err8").html(
+                "Mobile number with greater than 11 digits long is invalid."
+              );
+            } else if (mobile.length < 10) {
+              errCount += 1;
+              $("#err8").html(
+                "Mobile number with less than 10 digits long is invalid."
+              );
+            } else if (mobile.length == 11 && resMobile == false) {
+              errCount += 1;
+              $("#err8").html(
+                "Incorrect mobile number, please check your number."
+              );
+            }
+          }
+
+          var regex = /^0+(?!$)/;
+          mobile = mobile.replace(regex, "");
+        }
+        if (errCount > 0) {
+          $("#save_cust_data").removeAttr("rel");
+        } else {
+          $("#save_cust_data").attr("rel", "modal:open");
+          var dialCode = window.intlTelInputGlobals
+            .getInstance(input)
+            .getSelectedCountryData().dialCode;
+
+          $("#numberToVerify").html("+" + dialCode + mobile);
+          var toVerify = $("#numberToVerify").text();
+          storage.setItem("cust_mob_num", toVerify);
+          storage.setItem("toVerify", toVerify);
+
+          storage.setItem("cust_email", $("#txtEmail1").val());
+          storage.setItem("cust_fname", $("#txtFirstName").val());
+          storage.setItem("cust_mname", $("#txtMiddleName").val());
+          storage.setItem("cust_lname", $("#txtLastName").val());
+
+          storage.setItem("cust_postcode", postcode);
+          storage.setItem("cust_add1", encodeURIComponent(add1));
+          storage.setItem("cust_add2", encodeURIComponent(add2));
+          storage.setItem("cust_add3", encodeURIComponent(add3));
+          storage.setItem("cust_addId", $("#txtAddrID").val());
+
+          var source = $("#sourceOfFundsDD option:selected").val();
+          storage.setItem("cust_sop", source);
+
+          var country = $("#countryOfResidences option:selected").val();
+          storage.setItem("country", country);
+        }
+      }
+
+      function responsePostcodeLookup(res) {
+        var lookup = document.getElementById("txtPostCodeLookup");
+
+        $("#txtPostCodeLookup").empty();
+
+        var addrDtlVal = "";
+        var addrDtlText = "";
+
+        if (res.err_code == "1") {
+          lookup.options[lookup.options.length] = new Option(
+            "Postcode lookup not available",
+            ""
+          );
+        } else {
+          if (res.lookupAddress.length <= 0) {
+            lookup.options[lookup.options.length] = new Option(
+              "Postcode lookup not available",
+              "00"
+            );
+          } else {
+            lookup.options[lookup.options.length] = new Option(
+              "Please select",
+              "00"
+            );
+          }
+          for (var i = 0; i < res.lookupAddress.length; i++) {
+            var address = res.lookupAddress[i];
+
+            addrDtlVal =
+              address.unit +
+              "|" +
+              address.building +
+              "|" +
+              address.street1 +
+              "|" +
+              address.street2 +
+              "|" +
+              address.town +
+              "|" +
+              address.county +
+              "|" +
+              address.addrID;
+            if (address.unit != "") {
+              addrDtlText = address.unit + ",";
+            }
+
+            if (address.building != "") {
+              addrDtlText += address.building + ",";
+            }
+            addrDtlText += address.street1 + ",";
+
+            if (address.street2 != "") {
+              addrDtlText += address.street2 + ",";
+            }
+
+            if (address.county != "") {
+              addrDtlText += address.town + "," + address.county;
+            } else {
+              addrDtlText += address.town;
+            }
+
+            lookup.options[lookup.options.length] = new Option(
+              addrDtlText,
+              addrDtlVal
+            );
+
+            addrDtlText = "";
+            addrDtlVal = "";
+          }
+        }
+
+        $("#wait").css("display", "none");
+        $("#part3").show();
+      }
+
+      function populateAddress() {
+        var lookupAddr = $("#txtPostCodeLookup").val();
+        var arrAddr = lookupAddr.split("|");
+
+        var strAddr = "";
+        if (!(arrAddr[0] == "")) {
+          strAddr = arrAddr[0] + ", ";
+        }
+
+        if (!(arrAddr[0] == "00")) {
+          var used = 0;
+          if (!(arrAddr[1] == "")) {
+            strAddr += arrAddr[1] + ", ";
+          } else {
+            strAddr += arrAddr[2] + ",";
+            used = 1;
+          }
+
+          $("#txtAddr1").val(strAddr);
+          strAddr = "";
+
+          if (!(arrAddr[2] == "")) {
+            if (used == 0) {
+              strAddr = arrAddr[2] + ",";
+            }
+          }
+
+          $("#txtAddr2").val(strAddr);
+          strAddr = "";
+
+          strAddr = arrAddr[4] + ", ";
+          strAddr += arrAddr[5];
+
+          $("#txtAddr3").val(strAddr);
+          $("#txtAddrID").val(arrAddr[6]);
+        } else {
+          $("#txtAddr1").val("");
+          $("#txtAddr2").val("");
+          $("#txtAddr3").val("");
+          $("#txtAddrID").val("");
+        }
+      }
+    </script>
+  </body>
+</html>

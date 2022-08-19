@@ -1,0 +1,79 @@
+.header-dashboard {
+  display: flex;
+  justify-content: center;
+  height: 150px;
+
+  box-shadow: 0 2px 3px 0 rgba(0,0,0,.1);
+
+  &-wrapper {
+    padding: 10px 0;
+    width: 100%;
+    max-width: 100%;
+
+    text-align: center;
+  }
+
+  &-amount {
+    margin: 0;
+  }
+
+  &-date {
+    margin: 0;
+    margin-bottom: 15px;
+
+    font-size: 14px;
+  }
+
+  &-btn {
+    display: block;
+    margin-bottom: 20px;
+
+    text-align: center;
+  }
+}
+
+.dashboard {
+  margin-top: 180px;
+  margin-bottom: 100px;
+
+  &-card-wrapper {
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+
+  &-card-title {
+    margin: 0;
+    margin-bottom: 5px;
+
+    font-size: 18px;
+  }
+
+  &-card-text {
+    margin: 0;
+
+    font-size: 14px;
+  }
+
+  &-card-number {
+    margin: 0;
+    margin-bottom: 12px;
+
+    font-size: 13px;
+  }
+
+  &-card-btn {
+    display: block;
+    padding: 6px 5px;
+    margin-bottom: 10px;
+    width: 91px;
+    max-width: 100%;
+
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .detail-link {
+    color: $lynch-blue;
+    text-decoration: initial;
+  }
+}

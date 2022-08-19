@@ -1,0 +1,62 @@
+//main: ../main.scss
+
+// ------------------------------------------------------------------------------------
+// This file contains styles that are specific to the New Beneficiary S2 page.
+// ------------------------------------------------------------------------------------
+
+
+.new-beneficiary-s2 {
+  .title-holder {
+    padding-top: 4px;
+
+    .title {
+      margin: 23px 0 17px;
+
+      font-family: $font-avenir;
+      font-size: 23.3px;
+      font-weight: 600;
+      color: $prussian-blue;
+    }
+  }
+
+  .form-holder {
+    padding-bottom: 85px;
+  }
+
+  .form-controls {
+    padding-bottom: 3px;
+  }
+
+  .textbox {
+    padding: 7px 0 6px;
+  }
+
+  .input-title {
+    word-spacing: 4px;
+  }
+
+  .input-select {
+    background-position: top 19px right 8px;
+  }
+
+  .select {
+    padding: 8px 0 8px;
+
+    font-size: 19px;
+
+    option {
+      margin: 0 100px;
+      padding: 0 10px; 
+    }
+  }
+
+  .btn-holder {
+    display: flex;
+    margin-top: 32px;
+
+    .next {
+      padding: 14px 20px;
+      width: 100%;
+    }
+  }
+}
