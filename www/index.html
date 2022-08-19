@@ -1,51 +1,162 @@
 <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
-    <head>
-        <meta charset="utf-8">
-        <!--
-        Customize this policy to fit your own app's needs. For more guidance, see:
-            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
-        Some notes:
-            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-                * Enable inline JS: add 'unsafe-inline' to default-src
-        -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
-        <meta name="color-scheme" content="light dark">
-        <link rel="stylesheet" href="css/index.css">
-        <title>Hello World</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+<head>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, viewport-fit=cover">
+    <meta name="facebook-domain-verification" content="yffgkm3rbj1wpy0b1ghgrscxbmp4p3" />
+    <link rel="stylesheet" type="text/css" href="styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/plugins/LaunchMyApp.js"></script>
+    <title>BCRemit</title>
+    <!-- Facebook Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+     fbq('init', '407432117177223');
+     fbq('track', 'ViewContent');
+    </script>
+    <noscript>
+     <img height="1" width="1" 
+    src="https://www.facebook.com/tr?id=407432117177223&ev=ViewContent
+    &noscript=1"/>
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+    
+</head>
+<body>
+    <div id="alertMe" class="overlayIndex" style="display:none;">
+        <div class="popup">
+            <h3>Alert</h3>
+            <a class="close" href="#" onclick="closeMe();">&times;</a>
+            <div class="content">
+                New app version is available for download.
+                <p><input id="btnDone" type="button" value="Download" class="btn btn-blue btn-new" onclick="openWin('gPlay');" /></p>
             </div>
         </div>
-        <script src="cordova.js"></script>
-        <script src="js/index.js"></script>
-    </body>
+    </div>
+    
+        <main class="home" style="display:block">
+            <div class="container">
+                <div class="logo-wrapper">
+                    <img class="logos" src="assets/images/logo.png" />
+                </div>
+                <div class="swiper-container swiper-home">
+                    <div class="swiper-wrapper home-swiper">
+                        <div class="swiper-slide">
+                            <div class="slide-wrapper">
+                                <img src="assets/images/landing-images/home-phone-1.png" width="211" height="221" class="phone-logos" alt=""  />
+                                <p class="title home-title">Money Saving</p>
+                                <p class="home-text">Transfer fee starting at only £2.99 and the best exchange rate</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slide-wrapper">
+                                <img src="assets/images/landing-images/home-phone-2.png" width="211" height="221" class="phone-logos" alt="" />
+                                <p class="title home-title">Fast & Convenient</p>
+                                <p class="home-text">Send money to <span><img src="assets/images/home-ph-icon.png" class="home-ph-icon" alt="" /></span> anytime, anywhere in as little as few minutes</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slide-wrapper">
+                                <img src="assets/images/landing-images/home-phone-3.png" width="211" height="221" class="phone-logos" alt="" />
+                                <p class="title home-title">Safe & Secure</p>
+                                <p class="home-text">Registered with the FCA & HMRC, and employ secure proven technology</p>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="slide-wrapper">
+                                <img src="assets/images/landing-images/home-phone-4.png" width="211" height="221" class="phone-logos" alt="" />
+                                <p class="title home-title">24/7 Customer Service</p>
+                                <p class="home-text">Call or message us anytime you need help</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="button-wrapper">
+                    <a href="signup.html" class="btn btn-blue btn-new">Create new account</a>
+                    <a href="login.html" class="btn btn-border-blue btn-new-radius" type="submit">Log in</a>
+                    <div style="display: flex;justify-content: center; align-items: center;height:15px;">
+                        <hr style="width: 35%;" />
+                        <h6>or</h6>
+                        <hr style="width: 35%;" />
+                    </div>
+                    <a href="check_rates.html"  class="btn btn-blue btn-green">Check FX Rate</a>
+                    <!-- <a href="check_rates.html" class="home-link">Check FX Rate</a><br /> -->
+                </div>
+            </div>
+        </main>
+    
+        <footer class="footerConnection no-internet-connection" style="display: none;">
+            <div style="display: flex;justify-content: center; align-items: center;height: 4vh;">
+                <img src="" alt="" height="18px" width="18px" class="footerConnectionImage">
+                <span class="foooterConnectionMsg" style="margin-left: 3%;"></span>
+            </div>
+        </footer>
+    </div>
+
+    <input id="txtGoTo" type="hidden" value="#" />
+    <script src="./scripts/vendors/jquery.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script src="./scripts/vendors/tether.min.js"></script>
+    <script src="./scripts/vendors/swiper.min.js"></script>
+    <script src="./scripts/core/base.js"></script>
+    <script src="./scripts/modules/theme-module.js"></script>
+    <script src="./scripts/bootstrapper.js"></script>
+    <script type="text/javascript">
+
+        storage.setItem("statusVerification", 0);
+    
+        $(document).ready(function () {
+            storage.setItem("mobileVersion", "4.3.2");
+            storage.setItem("NOW", "index");
+            versionCheck();
+            myIpAdd();
+            storage.setItem("ctry_code", "");
+            storage.setItem("lblmsg", "");
+        });
+
+        function versionCheck() {
+            storage.setItem("appVersion", "432");
+            getAppVersion();
+        }
+
+        function closeMe() {
+            $("#alertMe").hide();
+        }
+
+        function myIpAdd() {
+            //var custIP = "94.0.130.74";  //UK
+            //var custIP = "2.19.175.255";   //ES
+            $.getJSON("https://api.ipify.org?format=jsonp&callback=?",
+                function (data) {                   
+                    storage.setItem("ip", data.ip);
+                    console.log("IP LOC :: " + storage.getItem("ip"));
+                }
+            );
+        }
+        
+        function getMyIP(ip) {
+            $.getJSON('https://ipapi.co/' + ip + '/json',
+                function (json) {
+                    if(json.country === "PH"){
+                        $("#container-index").show();
+                        $(".home-text").html("phpphh")
+                        $(".home-text").show();
+                    }
+                    
+                }
+            );
+        }
+
+    </script>
+</body>
 </html>

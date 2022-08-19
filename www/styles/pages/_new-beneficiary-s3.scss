@@ -1,0 +1,58 @@
+//main: ../main.scss
+
+// ------------------------------------------------------------------------------------
+// This file contains styles that are specific to the New Beneficiary S3 page.
+// ------------------------------------------------------------------------------------
+
+.new-beneficiary-s3 {
+  .title-holder {
+    padding-top: 4px;
+
+    .title {
+      margin: 23px 0 17px;
+
+      font-family: $font-avenir;
+      font-size: 23.3px;
+      font-weight: 600;
+      color: $prussian-blue;
+    }
+  }
+
+  .form-holder {
+    padding-bottom: 80px;
+  }
+
+  .form-controls {
+    padding-bottom: 3px;
+  }
+
+  .input-title {
+    word-spacing: 3px;
+  }
+
+  .textbox {
+    padding: 7px 0 6px;
+  }
+
+  .input-select {
+    background-position: top 19px right 8px;
+  }
+
+  .select {
+    padding: 8px 0 8px;
+
+    font-size: 19px;
+  }
+
+  .btn-holder {
+    display: flex;
+    margin-top: 192px;
+
+    .save {
+      padding: 15px 20px;
+      width: 100%;
+
+      font-size: 16px;
+    }
+  }
+}

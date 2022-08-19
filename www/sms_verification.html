@@ -1,0 +1,364 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, viewport-fit=cover">
+    <meta name="facebook-domain-verification" content="yffgkm3rbj1wpy0b1ghgrscxbmp4p3" />
+    <title>BC Remit | Sign Up 1</title>
+    <link rel="stylesheet" type="text/css" href="css/intlTelInput.css">
+    <script type="text/javascript" src="cordova.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/main.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.modal.min.css">
+
+    <style>
+        .button {
+            background-color: #008cba; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+            .button:disabled {
+                opacity: 1;
+            }
+
+        .hide {
+            display: none;
+        }
+    </style>
+        <!-- Facebook Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+     fbq('init', '407432117177223'); 
+     fbq('track', 'Contact');
+    </script>
+    <noscript>
+     <img height="1" width="1" 
+    src="https://www.facebook.com/tr?id=407432117177223&ev=Contact
+    &noscript=1"/>
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+</head>
+<body>
+
+    <header class="header db-nav">
+        <div class="container container-custom">
+            <div class="header-inner">
+
+                <h2 class="header-title title">SMS Verification</h2>
+                <a href="index.html" class="btn-close">
+                    <svg version="1.1" id="Capa_1" class="close-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         viewBox="0 0 47.971 47.971" xml:space="preserve">
+                    <g>
+                    <path d="M28.228,23.986L47.092,5.122c1.172-1.171,1.172-3.071,0-4.242c-1.172-1.172-3.07-1.172-4.242,0L23.986,19.744L5.121,0.88
+              c-1.172-1.172-3.07-1.172-4.242,0c-1.172,1.171-1.172,3.071,0,4.242l18.865,18.864L0.879,42.85c-1.172,1.171-1.172,3.071,0,4.242
+              C1.465,47.677,2.233,47.97,3,47.97s1.535-0.293,2.121-0.879l18.865-18.864L42.85,47.091c0.586,0.586,1.354,0.879,2.121,0.879
+              s1.535-0.293,2.121-0.879c1.172-1.171,1.172-3.071,0-4.242L28.228,23.986z" />
+          </g>
+          </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="wrapper" style="display:flex;align-items:center;justify-content:center;height:80vh;">
+            <div id="dialog" style="padding:30px;margin:auto">
+
+                <div style="text-align:center" id="smsInfoMsgsContainer">
+                    <label style="font-size:medium;display:none;color:#f00" id="smsInfoMsgs"></label><br />
+                </div>
+
+                <div style="text-align:center">
+                    <label class="header-title title" style="color:#05294b">Verify Mobile Number</label>
+                </div>
+                <p style="text-align:center">
+                    <label style="font-size:medium;color:#758898;" id="p2">We sent an sms verification code to  </label>
+                    <label class="header-title title" style="font-size:medium;" id="p3"> </label>
+
+                    <br />
+                    <label style="font-size:medium;color:#758898;">Please enter it below.</label>
+     
+                </p><br />
+                <div id="form" style="text-align:center">
+                    <div class="btn-wrapper bottom">
+                        <input type="number" id="verificationCode" onkeyup="this.value = this.value.replace(/[^0-9]/g,'')" style="text-align:center;width:100%;height:50px" placeholder="4-Digit Code"><br />
+                        <span style="color:#f00;font-size:small" id="wrongVerfCode"></span>
+                    </div><br /><br />
+                    <div>
+                        <div style="text-align:center">
+                            <label style="font-size:medium">Didn't receive sms code?</label>
+                            <button style="font-size:medium;background:white;border:none;color:blue" id="reSendCode" onclick="ReSendCode()">Resend Code</button><br /><br />
+                            <a href="#ex1" rel="modal:open" style="font-size:medium;background:white;color: rgb(72, 0, 255)" type="button" id="wrong_number">Change number</a>
+                        </div>
+
+                    </div>
+                    <br />
+                    <br />
+                    <div class="btn-wrapper bottom">
+                        <button class="btn btn-blue btn-new" id="verCodebtn" style="width:100%;">
+                            <i class="loading-icon fa fa-spinner fa-spin hide color-white"></i>
+                            <i class="check-icon fa fa-check hide color-white"></i>
+                            <span class="btn-txt">Verify</span>
+                        </button><br /><br />
+                 
+                        <label style="font-size:medium;">Need more help?</label><br />
+                        <a href="tel:(+44) 208 106 6888" style="font-size:medium;color:#4800ff;text-decoration:none" > Contact Us </a>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="ex1" class="modal">
+        <div style="display:flex;text-align:center;justify-content:space-evenly;flex-direction:column">
+            <label class="header-title" style="text-align:center;color:#05294b">Please enter your new</label>
+            <label class="header-title" style="text-align:center;color:#05294b;">Mobile number:</label>
+        </div>
+        <p>
+            <div class="btn-wrapper bottom" id="12" style="display:flex;align-content:center;justify-content:center;flex-direction:column">
+                <input type="tel" id="newMobNum" onkeyup="this.value = this.value.replace(/[^0-9]/g,'')" name="nverificationCode" style="width:100%;height:50px;text-align:center;" placeholder="New number" autocomplete="off">
+                <span style="color:#f00;font-size:small" id="nWrongVerfCode"></span>
+                <div id="10"></div>
+            </div>
+        </p>
+        <div class="btn-wrapper bottom" style="width:100%;display:flex;margin:10px;align-content:center;justify-content:center">
+            <a href="#" class="btn btn-border-blue btn-new-radius" style="width:50%" rel="modal:close">Close</a> &emsp;
+            <a class="btn btn-blue btn-new" style="width:50%;float:right" id="confirmNewNo">Ok</a>
+        </div>
+    </div>
+
+    <footer class="footerConnection no-internet-connection" style="display: none;">
+        <div style="display: flex;justify-content: center; align-items: center;height: 5vh;">
+            <img src="" alt="" height="20px" width="20px" class="footerConnectionImage">
+            <span class="foooterConnectionMsg" style="margin-left: 3%;"></span>
+        </div>
+    </footer>
+    
+    <script src="./scripts/vendors/jquery-3.0.0.min.js"></script>
+    <script src="./scripts/vendors/jquery.modal.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script src="js/intlTelInput.js"></script>
+    <script type="text/javascript" src="js/defaultJSONData.js"></script>
+    <script src="./scripts/vendors/jquery.min.js"></script>
+    <script src="./scripts/vendors/tether.min.js"></script>
+    <script src="./scripts/vendors/swiper.min.js"></script>
+    <script src="./scripts/vendors/jquery.mask.min.js"></script>
+    <script src="./scripts/vendors/jquery.passwordify.min.js"></script>
+    <script src="./scripts/core/base.js"></script>
+    <script src="./scripts/modules/theme-module.js"></script>
+    <script src="./scripts/bootstrapper.js"></script>
+    <script type="text/javascript">
+
+        storage.setItem("NOW", "sms_verification");
+        storage.setItem("checksmsinfo", "");
+        var regex = /^[0-9]*$/;
+
+        $(document).ready(function () {
+            $("#smsInfoMsgs").css("display", "block");
+            console.log("Initial Number: " + storage.getItem("cust_mob_num"));
+            $("#p3").html(storage.getItem("cust_mob_num"));
+            $("#newMobNum").val($("#p3").text());
+          
+            getCountryFlagsCcy();
+
+         
+        });
+
+        function getCountryFlagsCcyResponse(res){
+       
+            var obj = "";
+            var arr = [];
+            for (var i = 0; i <= res.pCode.length - 1; i++) {
+                obj = res.pCode[i];
+                if(obj.code === "UK"){
+                    arr.push("GB");
+                }else{
+                    arr.push(obj.code);
+                }
+                console.log(arr);
+            }
+
+            var input = document.querySelector("#newMobNum");
+            window.intlTelInput(input, {
+                dropdownContainer: document.getElementById("12"),
+                formatOnDisplay: false,
+                onlyCountries: arr,
+                preferredCountries: ['cn', 'jp'],
+                separateDialCode: true,
+                utilsScript: "js/utils.js",
+            });
+            console.log(arr);
+            getUserTime();
+        }
+
+        function getUserTimeResponse(res) {
+            var countDownDate = new Date(res.timerCreated).getTime();
+            var serverTime = new Date(res.serverTime).getTime();
+
+            var addMinutess = 600000;
+            console.log(countDownDate);
+
+            var newTime = countDownDate + addMinutess;
+
+            var x = setInterval(function () {
+                serverTime += 1000;
+                var distance = newTime - serverTime;
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                if (storage.getItem("vcMsg") == "Unable to send your sms code to your number. Please click Change Number and try again.") {
+                    $("#smsInfoMsgs").html(storage.getItem("vcMsg"));
+                }
+                else if (storage.getItem("vcMsg") == "Verify attempt limit reached.Please resend code after") {
+                    $("#smsInfoMsgs").css("color", "#f00");
+                    $("#smsInfoMsgs").html(storage.getItem("vcMsg") + " 0" + minutes + ":" + seconds + " minutes.");
+                    if (storage.getItem("vcMsg") == "Verify attempt limit reached.Please resend code after" && seconds < 10) {
+                        $("#smsInfoMsgs").css("color", "#f00");
+                        $("#smsInfoMsgs").html(storage.getItem("vcMsg") + " 0" + minutes + ":0" + seconds + " minutes.");
+                    }
+                    $("#wrongVerfCode").hide();
+                }
+                else if (storage.getItem("vcMsg") == "Sms verification code is invalid. Please retry.") {
+                    $("#smsInfoMsgs").css("color", "#f00");
+                    $("#smsInfoMsgs").html(storage.getItem("vcMsg"));
+                }
+                else if (storage.getItem("vcMsg") == "Successfully verified phone number.") {
+                    $("#smsInfoMsgs").css("color", "#4800ff");
+                    $("#smsInfoMsgs").html(storage.getItem("vcMsg"));
+                }
+                else if (storage.getItem("vcMsg") == "We successfully resent your code.") {
+                    $("#smsInfoMsgs").css("color", "#4800ff");
+                    $("#smsInfoMsgs").html(storage.getItem("vcMsg"));
+                }
+                else if (storage.getItem("vcMsg") == "Please complete your verification to get started.") {
+                    $("#smsInfoMsgs").css("color", "#4800ff");
+                    $("#smsInfoMsgs").html(storage.getItem("vcMsg"));
+                }
+                else if (seconds < 10) {
+                    $("#smsInfoMsgs").html(storage.getItem("vcMsg") + " 0" + minutes + ":0" + seconds + " minutes.");
+                }
+                else if (minutes == 0 && seconds < 10) {
+                    $("#smsInfoMsgs").html(storage.getItem("vcMsg") + " 0" + minutes + ":0" + seconds + " seconds.");
+                }
+                else {
+                    $("#smsInfoMsgs").html(storage.getItem("vcMsg") + " 0" + minutes + ":" + seconds + " minutes.");
+                }
+
+                if (distance <= 0) {
+                    clearInterval(x);
+                    $("#smsInfoMsgsContainer").hide();
+                } else {
+                    $("#smsInfoMsgsContainer").show();
+                }
+            }, 1000);
+        }
+
+        $("#verCodebtn").on("click", function () {
+            $(".loading-icon").removeClass("hide");
+            $("#verCodebtn").attr("disabled", true);
+            $("#reSendCode").attr("disabled", true);
+            $("#wrong_number").removeAttr("rel");
+
+            if ($("#verificationCode").val().length != 4 || $("#verificationCode").val() == "" || $("#verificationCode").val().length == 0) {
+                $("#wrongVerfCode").html("Please input the 4-digit Verification Code.");
+                $(".loading-icon").addClass("hide");
+                $("#verCodebtn").attr("disabled", false);
+                $("#reSendCode").attr("disabled", false);
+                $("#wrong_number").attr("rel", "modal:open");
+
+            } else {
+                $("#wrongVerfCode").html("");
+                $(".btn-txt").text("Verifying...");
+                $(".btn-txt").css("color","white");
+                $("#verCodebtn").attr("disabled", true);
+                $("#reSendCode").attr("disabled", true);
+                $("#wrong_number").removeAttr("rel");
+                verifySMSCode($("#verificationCode").val(), $("#p3").text());
+            }
+        })
+
+        $("#confirmNewNo").on("click", function () {
+            storage.setItem("changenumbersms", "changeNo");
+            var errCount = 0;
+            var mobile = $("#newMobNum").val();
+
+            if (mobile == "") {
+                errCount += 1;
+                console.log(errCount);
+                $("#nWrongVerfCode").html("Please enter new mobile number.");
+            }
+            else {
+                var input = document.querySelector("#newMobNum");
+                var resMobile = mobile.startsWith("0");
+                var dialCode = window.intlTelInputGlobals.getInstance(input).getSelectedCountryData().dialCode;
+                mobile = mobile.replace(/^0+/, "");
+                var confirmNewNoS = "+" + dialCode + mobile;
+                
+                var testmob = regex.test(mobile.replaceAll(/\s/g, ''));
+
+                if (testmob == false) {
+                    errCount += 1;
+                    console.log(errCount);
+                    $("#nWrongVerfCode").html("Invalid mobile number.");
+                }
+                else {
+                    $("#nWrongVerfCode").html("");
+                    var dialCode = window.intlTelInputGlobals.getInstance(input).getSelectedCountryData().dialCode;
+
+                    if (dialCode == "34") {
+                        errCount += 1;
+                        console.log(dialCode);
+                        console.log(errCount);
+                        if (mobile.length > 10) {
+                            $("#nWrongVerfCode").html("Mobile number with greater than 10 digits long is invalid.");
+                        } else if (mobile.length < 9) {
+                            $("#nWrongVerfCode").html("Mobile number with less than 9 digits long is invalid.");
+                        }
+                    } else if (mobile.length > 11) {
+                        errCount += 1;
+                        console.log(dialCode);
+                        console.log(errCount);
+                        $("#nWrongVerfCode").html("Mobile number with greater than 11 digits long is invalid.");
+                    } else if (mobile.length < 10) {
+                        $("#nWrongVerfCode").html("Mobile number with less than 10 digits long is invalid.");
+                    } else if (mobile.length == 11 && resMobile == false) {
+                        errCount += 1;
+                        $("#nWrongVerfCode").html("Incorrect mobile number, please check your number.");
+                    } else if (errCount == 0) {
+                        $("#p3").html(confirmNewNoS);
+                        var p3 = $("#p3").text();
+                        console.log(p3);
+                        vCSendCode(p3);
+                    }
+                }
+            }
+        })
+
+        function ReSendCode() {
+            storage.setItem("checksmsinfo", 1);
+            var p3 = $("#p3").text();
+            resendVerificationCode(p3);
+        }
+
+    </script>
+</body>
+</html>

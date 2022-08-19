@@ -1,0 +1,115 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains styles that are specific to the Check Rate page.
+// -----------------------------------------------------------------------------
+
+.check-rates{
+  .rate-wrapper{
+    padding-top: 26px;
+
+    p{
+      padding: 0;
+      margin: 0;
+
+      font-family: $font-avenir;
+      text-align: center;
+    }
+
+    .rate-title{
+      font-size: 18px;
+      font-weight: 600;
+      color: $prussian-blue;
+    }
+
+    .sub-title{
+      font-size: 14px;
+      font-weight: 500;
+      color: $light-slate-grey;
+    }
+    
+    .rate{
+      margin-top: 15px;
+
+      font-size: 23px;
+      font-weight: 600;
+      letter-spacing: .6px;
+      color: $prussian-blue;
+    }
+  }
+
+  form{
+    margin-top: 3px;
+  }
+
+  .input-custom {
+    display: flex;
+    margin-top: 12px;
+
+    .currency-label{
+      padding-right: 10px;
+      margin: 0;
+
+      font-size: 22px;
+      font-weight: 500;
+      color: $prussian-blue;
+    }
+
+    .input-textbox{
+      padding: 0;
+      padding-right: 10px;
+      width: 100%;
+      height: 34px;
+      
+      font-size: 22px;
+      text-align: right;
+      
+      border: 1px solid $gainsboro;
+      border-radius: 3px;
+    }
+  }
+
+  .fee-holder{
+    display: flex;
+    justify-content: space-between;
+    padding: 3px 0;
+
+    .fee-title{
+      padding: 0;
+      margin: 0;
+
+      font-family: $font-avenir;
+      font-size: 16px;
+      font-weight: 400;
+      color: $light-slate-grey;
+      letter-spacing: .4px;
+    }
+    
+    .fee-price{
+      padding: 0;
+      margin: 0;
+
+      font-family: $font-avenir;
+      font-size: 18px;
+      font-weight: 600;
+      color: $prussian-blue;
+    }
+  }
+
+  .button-wrapper{
+    padding: 5px;
+
+    .btn{
+      display: block;
+      margin: 10px 0;
+    }
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .check-rates{
+    .input-select{
+      font-size: 19px;
+    }
+  }
+}

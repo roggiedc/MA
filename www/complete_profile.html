@@ -1,0 +1,412 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, viewport-fit=cover">
+    <meta name="facebook-domain-verification" content="yffgkm3rbj1wpy0b1ghgrscxbmp4p3" />
+    <title>BC Remit | Sign Up 1</title>
+    <script type="text/javascript" src="cordova.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/main.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/intlTelInput.css">
+    <link rel="stylesheet" type="text/css" href="css/jquery.modal.min.css">
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window,document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+         fbq('init', '407432117177223'); 
+         fbq('track', 'CompleteRegistration');
+        </script>
+        <noscript>
+         <img height="1" width="1" 
+        src="https://www.facebook.com/tr?id=407432117177223&ev=CompleteRegistration
+        &noscript=1"/>
+        </noscript>
+        <!-- End Facebook Pixel Code -->
+</head>
+<body>
+    <header class="header db-nav">
+        <div class="container container-custom">
+            <div class="header-inner">
+                <h2 class="header-title title">Complete Details</h2>
+                <a href="login.html" class="btn-close">
+                    <svg version="1.1" id="Capa_1" class="close-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         viewBox="0 0 47.971 47.971" xml:space="preserve">
+                    <g>
+                    <path d="M28.228,23.986L47.092,5.122c1.172-1.171,1.172-3.071,0-4.242c-1.172-1.172-3.07-1.172-4.242,0L23.986,19.744L5.121,0.88
+              c-1.172-1.172-3.07-1.172-4.242,0c-1.172,1.171-1.172,3.071,0,4.242l18.865,18.864L0.879,42.85c-1.172,1.171-1.172,3.071,0,4.242
+              C1.465,47.677,2.233,47.97,3,47.97s1.535-0.293,2.121-0.879l18.865-18.864L42.85,47.091c0.586,0.586,1.354,0.879,2.121,0.879
+              s1.535-0.293,2.121-0.879c1.172-1.171,1.172-3.071,0-4.242L28.228,23.986z" />
+          </g>
+          </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+    <!-------------splash----------------------------------->
+    <main class="splash-screen" id="wait" style="display:none">
+        <div class="container">
+            <div class="content-holder">
+                <div class="loader-holder">
+                    <div class="loader">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div id="alertMe" class="overlay" style="display: none;">
+        <div class="popup">
+            <h3>Alert</h3>
+            <a class="close" href="#" onclick="redirectMe();">&times;</a>
+            <div class="content">
+                <span id="alertMsg"></span>
+                <p>
+                    <input id="btnDone" type="button" value="Ok" class="btn btn-blue btn-new" onclick="redirectMe();" /></p>
+            </div>
+        </div>
+    </div>
+    <main class="sign-up sign-up-first" id="MainBlock">
+
+        <div class="container">
+            <div style="color:#4800ff;font-size:medium;display:none" id="alertBoxCompleteProfile">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                <span id="msg">This is an alert box.</span>
+            </div>
+            <form>
+                <div class="input-holder">
+                    <p class="input-title">First Name</p>
+                    <input class="input-textbox" type="text" id="txtFDFirstName" name="firstName" onclick="clearInputError('err1');" value="" required autocomplete="off" />
+                    <span style="color:#f00;font-size:small" id="err1"></span>
+                </div>
+                <div class="input-holder">
+                    <p class="input-title">Middle Name (Optional)</p>
+                    <input class="input-textbox" type="text" id="txtFDMiddleName" name="middleName" onclick="clearInputError('err9');" value="" required autocomplete="off" />
+                    <span style="color:#f00;font-size:small" id="err102"></span>
+                </div>
+                <div class="input-holder">
+                    <p class="input-title">Last Name</p>
+                    <input class="input-textbox" type="text" id="txtFDLastName" name="lastName" onclick="clearInputError('err2');" value="" required autocomplete="off" />
+                    <span style="color:#f00;font-size:small" id="err2"></span>
+                </div>
+                <div class="input-holder">
+                    <p class="input-title">Date of Birth (DD/MM/YYYY)</p>
+                    <input class="input-textbox" type="text" id="txtFDDOB" name="birthDate" onclick="clearInputError('err3');" readonly="readonly" onfocus="setDate();" value="" required autocomplete="off"/>
+                    <span style="color:#f00;font-size:small" id="err33"></span>
+                </div>
+                <div class="input-holder">
+                    <p class="input-title">Country of Residence</p>
+                    <select class="input-select" id="CompleteCountryOfResidences" onchange="removepostcodelookup()">
+                    </select>
+                    <span style="color:#f00;font-size:small" id="err7753"></span>
+                </div>
+                <div class="input-holder" id="12">
+                    <p class="input-title">Mobile Number</p>
+                    <input class="input-textbox" id="txtFDMobile" onkeyup="this.value = this.value.replace(/[^0-9]/g,'')" onkeypress="isInputNumber(event);" name="mmobileNum" onclick="clearInputError('err4');" type="tel" required autocomplete="off"/><BR />
+                    <span style="color:#f00;font-size:small" id="err4"></span>
+                    <div id="10"></div>
+                </div>
+                <div class="input-holder">
+                    <p class="input-title" id="CompleteProfileCode">Post Code</p>
+                    <input class="input-textbox" id="txtFDPostCode" type="text" value="" onclick="clearInputError('err5');" onblur="getPostCodeLookup('profile');" required autocomplete="off"/>
+                    <span style="color:#f00;font-size:small" id="err5"></span>
+                </div>
+                <div class="input-holder" id="lookup">
+                    <p class="input-title">Lookup Address</p>
+                    <select class="input-select" id="txtFDLookup" onchange="populateAddress();">
+                        <optgroup label="Select">
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="input-holder">
+                    <p class="input-title">Address Line 1</p>
+                    <input class="input-textbox" id="txtFDAddr1" type="text" name="address1" onclick="clearInputError('err6');" value="" required autocomplete="off"/>
+                    <span style="color:#f00;font-size:small" id="err6"></span>
+                </div>
+                <div class="input-holder">
+                    <p class="input-title">Address Line 2 (Optional)</p>
+                    <input class="input-textbox" id="txtFDAddr2" type="text" name="address2" onclick="clearInputError('err7');" value="" required autocomplete="off"/>
+                    <span style="color:#f00;font-size:small" id="err7"></span>
+                </div>
+                <div class="input-holder">
+                    <p class="input-title">City/Town</p>
+                    <input class="input-textbox" id="txtFDAddr3" type="text" name="city" onclick="clearInputError('err8');" value="" required autocomplete="off"/>
+                    <span style="color:#f00;font-size:small" id="err8"></span>
+                </div>
+                <div class="input-holder">
+                    <p class="input-title">Country</p>
+                    <label id="txtCountry" type="text" name="address1" onclick="clearInputError('err69');" style="color:#45b3e0;font-weight:500;" value="" required />
+                    <span style="color:#f00;font-size:small" id="err69"></span>
+                </div>
+                <div class="btn-wrapper btn-wrapper-signup">
+                    <a href="#ex1" rel="modal:open" type="button" class="btn btn-blue btn-new" onclick="updateMyDetail('fullDetail');" id="save_cust_data">Save</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <div id="ex1" class="modal" style="display:none">
+        <p style="text-align: center;">
+            <label class="header-title title" style="text-align:center;color:#05294b">Verification Code</label><br />
+            <label style="text-align: center;font-size:medium;color:#758898;">For your security, we will send an SMS Verification Code to your mobile number.</label><br /><br />
+            <label class="header-title title" style="font:medium;color: #237afc;" id="numberToVerify"></label>
+        </p>
+        <p style="text-align:center;font-size:medium;">Is your mobile number correct?</p>
+        <div style="display:flex;justify-content:space-between">
+            <a href="#" class="btn btn-link btn-new-radius-red" rel="modal:close" style="color:#237afc;text-decoration:none;color: #888;border: 1px solid #888;width: 45%;">Edit</a>
+            <a href="#" class="btn btn-link btn-new color-white" style="text-decoration:none;float:right;width: 45%;" onclick="updateMyDetail('saveFullDetail');" >Yes</a>
+        </div>
+    </div>
+
+    <footer class="footerConnection no-internet-connection" style="display: none;">
+        <div style="display: flex;justify-content: center; align-items: center;height: 5vh;">
+            <img src="" alt="" height="20px" width="20px" class="footerConnectionImage">
+            <span class="foooterConnectionMsg" style="margin-left: 3%;"></span>
+        </div>
+    </footer>
+    
+    <input id="txtFDCallFrom" type="hidden" value="FD" />
+    <input id="txtFDAddrID" type="hidden" />
+    <input id="txtGoTo" type="hidden" />
+    <script src="./scripts/vendors/jquery-3.0.0.min.js"></script>
+    <script src="./scripts/vendors/jquery.modal.min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/defaultJSONData.js"></script>
+    <script src="js/intlTelInput.js"></script>
+    <script src="./scripts/vendors/jquery.min.js"></script>
+    <script src="./scripts/vendors/tether.min.js"></script>
+    <script src="./scripts/vendors/swiper.min.js"></script>
+    <script src="./scripts/vendors/jquery.mask.min.js"></script>
+    <script src="./scripts/vendors/jquery.passwordify.min.js"></script>
+    <link href="./css/datepicker.min.css" rel="stylesheet" type="text/css">
+    <script src="./js/datepicker.min.js"></script>
+    <script src="./js/datepicker.js"></script>
+    <script src="./js/datepicker.en.js"></script>
+    <script src="./scripts/core/base.js"></script>
+    <script src="./scripts/modules/theme-module.js"></script>
+    <script src="./scripts/bootstrapper.js"></script>
+    <script type="text/javascript">
+    
+    storage.setItem("NOW", "complete_profile"); 
+        var input;
+        var countrycodeIp;
+        $(document).ready(function () {
+            $('#txtFDDOB').datepicker({
+                language: 'en',
+                view: 'years',
+                dateFormat: 'dd/mm/yyyy',
+                autoClose: true,
+                ignoreReadonly: true,
+                allowInputToggle: true
+            });
+       
+            storage.setItem("statusVerification", 2);
+
+            if($("#txtCountry").text() == "" || $("#txtCountry").text() == null ){
+                var iniCountry = $("#CompleteCountryOfResidences option:selected").text();
+                $("#txtCountry").html(iniCountry);
+            }
+            completeProfileGetCountryList();
+        });
+    
+        function getCountryFlagsCcyResponse(res){
+            var obj = "";
+            var arr = [];
+            for (var i = 0; i <= res.pCode.length - 1; i++) {
+                obj = res.pCode[i];
+                if(obj.code === "UK"){
+                    arr.push("GB");
+                }else{
+                    arr.push(obj.code);
+                }
+            }
+  
+             input = document.querySelector("#txtFDMobile");
+             var iniCountry = $("#CompleteCountryOfResidences option:selected").val();
+                window.intlTelInput(input, {
+                dropdownContainer: document.getElementById("12"),
+                initialCountry: countrycodeIp,
+                onlyCountries:arr,
+                placeholderNumberType: "MOBILE",
+                preferredCountries: ['cn', 'jp'],
+                separateDialCode: true,
+                utilsScript: "js/utils.js",
+            });             
+            getCustomerDetail();
+            
+        }
+
+        function isInputNumber(evt) {
+            var ch = String.fromCharCode(evt.which);
+            if (!(/[0-9]/.test(ch))) {
+                evt.preventDefault();
+            }
+        }
+
+        //212.58. 246.0
+        //1.178.224.0
+        function getCountryBasedOnIp() {
+            $.getJSON('https://ipapi.co/' + storage.getItem("ip") + '/json',
+                function (json) {
+                    var countrycode = json.country;
+                   
+                    if (countrycode == "PH") {
+                        countrycode = "GB"
+                    };
+                    countrycodeIp = countrycode;
+
+                    if (countrycode == "GB") {
+                        countrycode = "UK"
+                    };
+
+                    if (countrycode != "ES" && countrycode != "UK") {
+                        $("#CompleteCountryOfResidences option[value='UK']").prop("selected", true);
+                    } else {
+                        $("#CompleteCountryOfResidences option[value='" + countrycode + "']").prop("selected", true);
+                    }
+
+                    var iniCountry = $("#CompleteCountryOfResidences option:selected").text();
+
+                    $("#txtCountry").html(iniCountry);
+                    removepostcodelookup();
+                    getCountryFlagsCcy();
+                }
+            );
+                
+      
+        }
+
+        function removepostcodelookup() {
+            var ddCountry = $("#CompleteCountryOfResidences").val();
+            var ddCountryText = $("#CompleteCountryOfResidences option:selected").text();
+
+            if (ddCountry == "ES") {
+                $("#txtCountry").html(ddCountryText);
+                $("#lookup").hide();
+                $("#txtFDPostCode").removeAttr("onblur");
+            } else {
+                $("#txtCountry").html(ddCountryText);
+                $("#lookup").show();
+                $("#txtFDPostCode").attr("onblur", "getPostCodeLookup('profile');");
+            }
+            if(ddCountry == "PH"){
+                $("#CompleteProfileCode").html("Zip Code")
+            }else{
+                $("#CompleteProfileCode").html("Post Code")
+            }
+        }
+
+        function setDate() {
+            var dt = $('#txtFDDOB').val();
+
+            if (dt == "" || dt == "01/01/1900") {
+                $('#txtFDDOB').datepicker().data('datepicker').selectDate(new Date(1980, 0, 1));
+            }
+        }
+
+        function responsePostcodeLookup(res) {
+            var lookup = document.getElementById("txtFDLookup");
+            $("#txtFDLookup").empty();
+            var addrDtlVal = "";
+            var addrDtlText = "";
+            if (res.err_code == "1") {
+                lookup.options[lookup.options.length] = new Option("Postcode lookup not available", "");
+           } else {
+                if(res.lookupAddress.length <= 0){
+                    lookup.options[lookup.options.length] = new Option("Postcode lookup not available", "00");
+                }else{
+                    lookup.options[lookup.options.length] = new Option("Please select", "00");
+                }
+                for (var i = 0; i < res.lookupAddress.length; i++) {
+                    var address = res.lookupAddress[i];
+
+                    addrDtlVal = address.unit + "|" + address.building + "|" + address.street1 + "|" + address.street2 + "|" + address.town + "|" + address.county + "|" + address.addrID;
+                    if (address.unit != "") {
+                        addrDtlText = address.unit + ",";
+                    }
+
+                    if (address.building != "") {
+                        addrDtlText += address.building + ",";
+                    }
+                    addrDtlText += address.street1 + ",";
+
+                    if (address.street2 != "") {
+                        addrDtlText += address.street2 + ",";
+                    }
+
+                    if (address.county != "") {
+                        addrDtlText += address.town + "," + address.county;
+                    } else {
+                        addrDtlText += address.town;
+                    }
+
+                    lookup.options[lookup.options.length] = new Option(addrDtlText, addrDtlVal);
+                    addrDtlText = "";
+                    addrDtlVal = "";
+                }
+            }
+            $("#wait").css("display", "none");
+            $("#MainBlock").show();
+        }
+
+        function populateAddress() {
+
+            var lookupAddr = $("#txtFDLookup").val();
+            var arrAddr = lookupAddr.split("|");
+
+            var strAddr = "";
+            if (!(arrAddr[0] == "")) {
+                strAddr = arrAddr[0] + ", ";
+            }
+
+            if (!(arrAddr[0] == "00")) {
+                var used = 0;
+                if (!(arrAddr[1] == "")) {
+                    strAddr += arrAddr[1] + ", ";
+                } else {
+                    strAddr += arrAddr[2] + ",";
+                    used = 1;
+                }
+
+                $("#txtFDAddr1").val(strAddr);
+                strAddr = "";
+
+                if (!(arrAddr[2] == "")) {
+                    if (used == 0) {
+                        strAddr = arrAddr[2] + ","; //street2
+                    }
+                }
+
+                $("#txtFDAddr2").val(strAddr);
+                strAddr = "";
+
+                strAddr = arrAddr[4] + ", ";
+                strAddr += arrAddr[5];
+
+                $("#txtFDAddr3").val(strAddr);
+                $("#txtFDAddrID").val(arrAddr[6]);
+            } else {
+                $("#txtFDAddr1").val("");
+                $("#txtFDAddr2").val("");
+                $("#txtFDAddr3").val("");
+                $("#txtFDAddrID").val("");
+            }
+
+        }
+    </script>
+</body>
+</html>

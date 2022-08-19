@@ -1,0 +1,560 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, viewport-fit=cover">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="facebook-domain-verification" content="yffgkm3rbj1wpy0b1ghgrscxbmp4p3" />
+    <title>BC Remit | Check Rates</title>
+    <script type="text/javascript" src="cordova.js"></script>
+    <link rel="icon" href="./assets/images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="./styles/main.min.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+        <!-- Facebook Pixel Code -->
+<script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+     fbq('init', '407432117177223'); 
+    fbq('track', 'PageView');
+    </script>
+    <noscript>
+     <img height="1" width="1" 
+    src="https://www.facebook.com/tr?id=407432117177223&ev=PageView
+    &noscript=1"/>
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+</head>
+
+<body>
+    <!-------------splash----------------------------------->
+    <div class="ptr--ptr ptr--refresh" style="min-height: 70px;"> </div>
+    <main class="splash-screen" id="wait" style="display:none">
+        <div class="container">
+            <div class="content-holder">
+                <div class="loader-holder">
+                    <div class="loader">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <header class="header db-nav">
+        <div class="container container-custom">
+            <div class="header-inner">
+                <h2 class="header-title title">Check Rates</h2>
+                <a href="index.html" class="btn-close">
+                    <svg version="1.1" id="Capa_1" class="close-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                         viewBox="0 0 47.971 47.971" xml:space="preserve">
+                    <g>
+                    <path d="M28.228,23.986L47.092,5.122c1.172-1.171,1.172-3.071,0-4.242c-1.172-1.172-3.07-1.172-4.242,0L23.986,19.744L5.121,0.88
+              c-1.172-1.172-3.07-1.172-4.242,0c-1.172,1.171-1.172,3.071,0,4.242l18.865,18.864L0.879,42.85c-1.172,1.171-1.172,3.071,0,4.242
+              C1.465,47.677,2.233,47.97,3,47.97s1.535-0.293,2.121-0.879l18.865-18.864L42.85,47.091c0.586,0.586,1.354,0.879,2.121,0.879
+              s1.535-0.293,2.121-0.879c1.172-1.171,1.172-3.071,0-4.242L28.228,23.986z" />
+          </g>
+          </svg>
+                </a>
+            </div>
+        </div>
+    </header>
+    <div id="alertMe" class="overlay" style="display: none;">
+        <div class="popup">
+            <h3>Alert</h3>
+            <a class="close" href="#" onclick="redirectMe();">&times;</a>
+            <div class="content">
+                <span id="alertMsg"></span>
+                <p>
+                    <input id="btnDone" type="button" value="Ok" class="btn btn-blue" onclick="redirectMe();" />
+                </p>
+
+            </div>
+        </div>
+    </div>
+    <main class="check-rates" style="margin:0%">
+
+        <div class="container">
+            <div class="rate-wrapper">
+                <p class="rate-title">Today's Exchange Rate</p>
+                <p class="sub-title" id="dt">As of Thursday, 25 Jul 2019</p>
+                <p class="rate" style="font-weight:700"><span id="hCCY"></span> 1 = <span id="hCCYDest"></span> <span id="fxRate"></span></p>
+            </div>
+            <div class="input-holder">
+                <p class="input-title">You Send</p>
+                <div class="input-custom">
+                    <img src="./assets/images/check-rates-flags/uk-flag.svg" alt="" class="flag-check-rates" id="countryFlag">
+                    <select class="currency-label" id="sourceCCY"  
+                        style="border:none;
+                        text-overflow:clip;
+                        background:white;
+                        background-color: white;
+                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAJCAYAAAA/33wPAAAAvklEQVQoFY2QMQqEMBBFv7ERa/EMXkGw11K8QbDXzuN4BHv7QO6ifUgj7v4UAdlVM8Uwf+b9YZJISnlqrfEUZVlinucnBGKaJgghbiHOyLyFKIoCbdvecpyReYvo/Ma2bajrGtbaC58kCdZ1RZ7nl/4/4d5EsO/7nzl7IUtodBexMMagaRrs+06JLMvcNWmaOv2W/C/TMAyD58dxROgSmvxFFMdxoOs6lliWBXEcuzokXRbRoJRyvqqqQvye+QDMDz1D6yuj9wAAAABJRU5ErkJggg==);
+                        background-position: right;
+                        background-repeat: no-repeat;
+                        padding-right: .8em;
+                        background-size: 15px;
+                        -webkit-appearance: none;"
+                        onchange="choiceCurrency()">
+                    </select>
+                    <input class="input-textbox" id="txtSendAmt" onkeyup="this.value = this.value.replace(/[^0-9.]/g,'')"  onclick="this.setSelectionRange(0, this.value.length);" type="tel" value="500.00">
+                </div>
+            </div>
+            <div class="input-holder">
+                <p class="input-title">Recipient Gets</p>
+                <div class="input-custom">
+                    <img src="./assets/images/check-rates-flags/uk-flag.svg" alt="" class="flag-check-rates" id="countryFlag_dest">
+                    <select class="currency-label" id="sourceCCYDest"  
+                        style="border:none;
+                        text-overflow:clip;
+                        background:white;
+                        background-color: white;
+                        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAJCAYAAAA/33wPAAAAvklEQVQoFY2QMQqEMBBFv7ERa/EMXkGw11K8QbDXzuN4BHv7QO6ifUgj7v4UAdlVM8Uwf+b9YZJISnlqrfEUZVlinucnBGKaJgghbiHOyLyFKIoCbdvecpyReYvo/Ma2bajrGtbaC58kCdZ1RZ7nl/4/4d5EsO/7nzl7IUtodBexMMagaRrs+06JLMvcNWmaOv2W/C/TMAyD58dxROgSmvxFFMdxoOs6lliWBXEcuzokXRbRoJRyvqqqQvye+QDMDz1D6yuj9wAAAABJRU5ErkJggg==);
+                        background-position: right;
+                        background-repeat: no-repeat;
+                        padding-right: .8em;
+                        background-size: 15px;
+                        -webkit-appearance: none;"
+                        onchange="choiceCurrencyDest()">
+                    </select>
+                    <input class="input-textbox" id="txtDestAmt" onkeyup="this.value = this.value.replace(/[^0-9.]/g,'')" onclick="this.setSelectionRange(0, this.value.length);" type="tel" value="">
+                </div>
+            </div>
+            <div class="input-holder">
+                <p class="input-title">Delivery Option</p>
+                <select class="input-select" id="txtProduct" onchange="recalculate();">
+                        <option value="1" id="c2a">Credit to Bank Account</option>
+                        <option value="4" id="ew">E-Wallet</option>
+                        <option value="0" id="cp">Cash Pickup</option>
+                </select>
+            </div>
+            <div class="fee-holder">
+                <p class="fee-title"> Online Bank Transfer </p>
+                <p class="fee-price"> Fee: <span id="OBTFeeCcySymbol"></span> <span id="OBTFee"></span></p>
+            </div>
+            <div class="fee-holder removeFromPh" >
+                <p class="fee-title"> Debit Card </p>
+                <p class="fee-price"> Fee: <span id="OBTFeeCcySymbolDebit"></span> <span id="DCFee"></span> </p>
+            </div>
+            <div class="button-wrapper">
+                <a href="signup.html" class="btn btn-blue btn-new" type="submit">Sign Up</a>
+                <a href="login.html" class="btn btn-border-blue btn-new-radius">Log in</a>
+                <p><span style="font-size:small" id="crVersion">Version 4.0.0</span></p>
+            </div>
+        </div>
+
+    </main>
+    <footer class="footerConnection no-internet-connection" style="display: none;">
+        <div style="display: flex;justify-content: center; align-items: center;height: 5vh;">
+            <img src="" alt="" height="20px" width="20px" class="footerConnectionImage">
+            <span class="foooterConnectionMsg" style="margin-left: 3%;"></span>
+        </div>
+    </footer>
+    <input id="txtMode" type="hidden" />
+    <input id="txtGoTo" type="hidden" value="#" />
+    <script type="text/javascript" src="js/helper.js"></script>
+    <script type="text/javascript" src="js/defaultJSONData.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script src="./scripts/vendors/jquery.min.js"></script>
+    <script type="text/javascript">
+  
+    storage.setItem("NOW", "check_rates");  
+    var editFlag = false;
+    var cCCY = "";
+    var cCCY_Dest = "";
+
+    $(document).ready(function () {
+        $("#crVersion").html("Version " + storage.getItem("mobileVersion"));
+        $("#dt").html(setDate());
+        getCountryBasedOnIP();
+    });
+
+    function choiceCurrency() {
+        var strUser = $("#sourceCCY option:selected").text();
+        if (strUser == "EUR") {
+            $("#countryFlag").attr('src','./assets/images/check-rates-flags/euro-flag.svg');         
+            $("#hCCY").html("&#8364;");
+            cCCY = "ES";
+            $(".removeFromPh").show();
+            forwardCalculate();
+        } else if (strUser == "PHP") {
+            $("#countryFlag").attr('src','./assets/images/check-rates-flags/ph-flag.svg');
+            $("#hCCY").html("&#8369;");
+            cCCY = "PH";
+            $(".removeFromPh").hide();
+            forwardCalculate();
+        }
+        // else if (strUser == "CAD") {
+        //     $("#countryFlag").attr('src','./assets/images/check-rates-flags/ca-flag.svg');
+        //     $("#hCCY").html("&#36;");
+        //     cCCY = "CA";
+        //     $(".removeFromPh").hide();
+        //     forwardCalculate();
+        // }
+        else if (strUser == "GBP") {
+            $("#countryFlag").attr('src','./assets/images/check-rates-flags/uk-flag.svg');
+            $("#hCCY").html("&#163;");
+            cCCY = "UK";
+            $(".removeFromPh").show();
+            forwardCalculate();
+        }
+    }
+
+    function choiceCurrencyDest() {
+        var strUser_dest = $("#sourceCCYDest option:selected").text();
+        if (strUser_dest == "GBP") {
+            $("#countryFlag_dest").attr('src','./assets/images/check-rates-flags/uk-flag.svg');
+            $("#hCCYDest").html("&#163;");
+            $("#ew").css("display", "none");
+            $("#cp").css("display", "none");
+            $('#txtProduct option[value="1"]').prop('selected', true);
+            cCCY_Dest = "UK";
+            forwardCalculate();
+        }else if (strUser_dest == "EUR") {
+            $("#countryFlag_dest").attr('src','./assets/images/check-rates-flags/euro-flag.svg');         
+            $("#hCCYDest").html("&#8364;");
+            $("#ew").css("display", "none");
+            $("#cp").css("display", "none");
+            $('#txtProduct option[value="1"]').prop('selected', true);
+            cCCY_Dest = "ES";
+            forwardCalculate();
+        }
+        //NOTE: Uncomment for Canada
+        // else if (strUser_dest == "CAD") {
+        //     $("#countryFlag_dest").attr('src','./assets/images/check-rates-flags/ca-flag.svg');         
+        //     $("#hCCYDest").html("&#36;");
+        //     $("#ew").css("display", "block");
+        //     $("#cp").css("display", "block");
+        //     $('#txtProduct option[value="1"]').prop('selected', true);
+        //     cCCY_Dest = "CA";
+        //     forwardCalculate();
+        // }
+        //====END
+            else if (strUser_dest == "PHP") {
+            $("#countryFlag_dest").attr('src','./assets/images/check-rates-flags/ph-flag.svg');
+            $("#hCCYDest").html("&#8369;");
+            $("#ew").css("display", "block");
+            $("#cp").css("display", "block");
+            cCCY_Dest = "PH";
+            forwardCalculate();
+        }
+    }
+        
+    function responseGetCurrency(res) {
+        try {
+        var ctrl = document.getElementById("sourceCCY");
+        var ctrl_dest = document.getElementById("sourceCCYDest");
+        var obj = "";
+        var uniqueArray = removeDuplicates(res.pCode, "ccy");
+        for (var i = 0; i <= uniqueArray.length -1; i++) {
+            obj = uniqueArray[i];
+            if(obj.ccy == "EUR" || obj.ccy == "PHP" || obj.ccy == "GBP"){ // add this for canada  || obj.ccy == "CAD"
+                ctrl_dest.options[ctrl_dest.options.length] = new Option(obj.ccy, obj.rCode);  
+            }
+            if(obj.ccy == "PHP" || obj.ccy == "GBP"){ // add this for canada  || obj.ccy == "CAD"
+                ctrl.options[ctrl.options.length] = new Option(obj.ccy, obj.rCode);
+            }                     
+        }
+
+        var ccCheck = storage.getItem("check_rate_countryCode");
+        if (ccCheck != "ES" || ccCheck != "GB" ) { // add this for canada  || ccCheck != "CA"
+            $("#sourceCCY option[value='UK']").prop("selected", true); //auto select dropdown check_rates based on ip|country of user.
+        } else {
+            $("#sourceCCY option[value='" + ccCheck + "']").prop("selected", true); //auto select dropdown check_rates based on ip|country of user.
+        }
+        var ccCheck_dest = storage.getItem("check_rate_countryCode_dest");
+        if (ccCheck_dest != "ES" || ccCheck_dest != "GB"|| ccCheck != "CA") { // add this for canada  || ccCheck != "CA"
+            $("#sourceCCYDest option[value='PH']").prop("selected", true); //auto select dropdown check_rates based on ip|country of user.
+        } else {
+            $("#sourceCCYDest option[value='" + ccCheck_dest + "']").prop("selected", true); //auto select dropdown check_rates based on ip|country of user.
+        }
+
+        var cSign = $("#sourceCCY option:selected").text(); // initial change currency label text to currency sign. 
+        var cSignDest = $("#sourceCCYDest option:selected").text(); // initial change currency label text to currency sign. 
+
+        if (cSign == "EUR") {
+            $("#hCCY").html("&#8364;");
+        } else if (cSign == "PHP"){
+            $("#hCCY").html("&#8369;");
+        }
+        // else if (cSign == "CAD"){
+        //     $("#hCCY").html("&#36;");
+        // }
+         else {
+            $("#hCCY").html("&#163;");
+        }
+
+        if (cSignDest == "EUR") {
+            $("#hCCYDest").html("&#8364;");
+        }
+        // else if (cSign == "CAD"){
+        //     $("#hCCY").html("&#36;");
+        // }
+         else if (cSignDest == "PHP"){
+            $("#hCCYDest").html("&#8369;");
+        } 
+        else {
+            $("#hCCYDest").html("&#163;");
+        }
+
+        var strUser = $("#sourceCCY option:selected").text();
+            if (strUser == "EUR") {
+                $("#countryFlag").attr('src','./assets/images/check-rates-flags/euro-flag.svg');         
+            } else if (strUser == "PHP") {
+                $("#countryFlag").attr('src','./assets/images/check-rates-flags/ph-flag.svg');         
+            }
+            // else if (strUser == "CAD") {
+            //     $("#countryFlag").attr('src','./assets/images/check-rates-flags/ca-flag.svg');         
+            // }
+            else {
+                $("#countryFlag").attr('src','./assets/images/check-rates-flags/uk-flag.svg');
+            }
+
+        var strUser_dest = $("#sourceCCYDest option:selected").text();
+            if (strUser_dest == "EUR") {
+                $("#countryFlag_dest").attr('src','./assets/images/check-rates-flags/euro-flag.svg');         
+            } else if (strUser_dest == "PHP") {
+                $("#countryFlag_dest").attr('src','./assets/images/check-rates-flags/ph-flag.svg');         
+            }
+            // else if (strUser == "CAD") {
+            //     $("#countryFlag").attr('src','./assets/images/check-rates-flags/ca-flag.svg');         
+            // }
+             else {
+                $("#countryFlag_dest").attr('src','./assets/images/check-rates-flags/uk-flag.svg');
+            }
+        } catch (error) {
+            forwardCalculate();
+            getCurrency();
+        }
+    }
+
+
+    $("#txtSendAmt").keyup(function () {
+        var amt = $("#txtSendAmt").val();
+        var mode = 0;
+        document.getElementById("txtSendAmt").value = numberWithCommas(revformatNumeric(amt));
+        
+        if (editFlag == false) {
+            compute(mode);
+        }
+        
+        if (editFlag == true) {
+            if (amt <= 0 || amt == "") {
+                document.getElementById("txtDestAmt").value = "";
+                document.getElementById("txtSendAmt").value = "";
+            }
+        }
+    });
+
+    $("#txtSendAmt").blur(function () {
+        var amt = revformatNumeric(document.getElementById("txtSendAmt").value);
+        var destAmt = document.getElementById("txtSendAmt").value;
+        
+        if (amt == 0 || destAmt == 0) {
+            document.getElementById("txtDestAmt").value = "";
+            document.getElementById("txtSendAmt").value = "";
+        } else {
+            document.getElementById("txtSendAmt").value = formatNumeric(amt);
+            if (document.getElementById("txtSendAmt").value == "NaN") {
+                document.getElementById("txtSendAmt").value = "";
+                document.getElementById("txtDestAmt").value = "";
+            }
+        }
+    });
+
+    $("#txtDestAmt").keyup(function () {
+        var amt = $("#txtDestAmt").val();
+        var mode = 1;
+
+        document.getElementById("txtDestAmt").value = numberWithCommas(revformatNumeric(amt));
+
+        if (editFlag == false) {
+            compute(mode);
+        }
+
+        if (editFlag == true) {
+            if (amt <= 0 || amt == "") {
+                document.getElementById("txtDestAmt").value = "";
+                document.getElementById("txtSendAmt").value = "";
+            }
+        }
+
+    });
+
+    $("#txtDestAmt").blur(function () {
+        var amt = revformatNumeric(document.getElementById("txtDestAmt").value);
+        var remAmt = document.getElementById("txtDestAmt").value;
+
+        if (amt <= 0 || remAmt <= 0) {
+            document.getElementById("txtSendAmt").value = "";
+            document.getElementById("txtDestAmt").value = "";
+        } else {
+            document.getElementById("txtDestAmt").value = formatNumeric(amt);
+            if (document.getElementById("txtDestAmt").value == "NaN") {
+                document.getElementById("txtDestAmt").value = "";
+                document.getElementById("txtSendAmt").value = "";
+            }
+        }
+    });
+
+    function compute(mode) {
+        var forwardTimer = 2800; 
+        var reverseTimer = 3400; 
+
+        editFlag = true;
+
+        $("#txtMode").val(mode);
+
+        if (mode == 0) {
+            var myVar = setTimeout(forwardCalculate, forwardTimer);
+        } else {
+            var myVar = setTimeout(reverseCalculate, reverseTimer);
+        }
+    }
+
+    function forwardCalculate() {      
+        if (cCCY == "" || cCCY == null) {
+            cCCY = "UK";
+        }
+
+        if (cCCY_Dest == "" || cCCY_Dest == null) {
+            cCCY_Dest = "PH";
+        }
+
+        var corridor = cCCY;
+        var dCountry = cCCY_Dest;
+
+        var product = $("#txtProduct").val();      
+        var amt = document.getElementById("txtSendAmt").value;
+        var mode = 0;
+        var tokenKey = "";
+
+        var strData = "product=" + product +
+            "&Corridor=" + corridor +
+            "&hCorridor=" + dCountry +
+            "&amt=" + amt +
+            "&mode=" + mode +
+            "&tokenKey=" + tokenKey +
+            "&callFrom=calculator" +
+            "&spID=" +
+            "&random=" + new Date().valueOf();
+        getRate(strData);
+        editFlag = false;
+    }
+
+    function reverseCalculate() {
+        if (cCCY == "" | cCCY == null) {
+            cCCY = "UK";
+        } if (cCCY_Dest == "" | cCCY_Dest == null) {
+            cCCY_Dest = "PH";
+        }
+        var corridor = cCCY;
+        var product = $("#txtProduct").val();
+        var dCountry = cCCY_Dest;
+        var amt = document.getElementById("txtDestAmt").value;
+        var mode = 1;
+        var tokenKey = "";
+
+        var strData = "product=" + product +
+            "&Corridor=" + corridor +
+            "&hCorridor=" + dCountry +
+            "&amt=" + amt +
+            "&mode=" + mode +
+            "&tokenKey=" + tokenKey +
+            "&callFrom=calculator" +
+            "&spID=" +
+            "&random=" + new Date().valueOf();
+        getRate(strData);
+        editFlag = false;
+    }
+
+    function recalculate() {
+        var mode = $("#txtMode").val();
+
+        if (mode == "0") {
+            forwardCalculate();
+        } else {
+            reverseCalculate();
+        }
+    }
+
+    function getRateResponse(res) {
+        $("#wait").css("display", "none");
+        if (res.ErrorCode == "0") {
+            if(res.FinBeneCur === res.FinRemCur){
+                $("#fxRate").html(formatNumeric(res.FinFXRate));
+            }
+            else if( res.FinBeneCur === "PHP"){
+                $("#fxRate").html(formatNumeric(res.FinFXRate));
+            }else{
+                $("#fxRate").html(Number(res.FinFXRate).toFixed(4));   
+            }
+            $("#txtSendAmt").val(formatNumeric(res.FinRemAmt));
+            $("#txtDestAmt").val(formatNumeric(res.FinPayAmt));
+            $("#DCFee").html(formatNumeric(res.TotalDCFee));
+            $("#OBTFeeCcySymbol").html(getCountryCurrencySymbolFromCcyLabel(res.FinRemCur));
+            $("#OBTFeeCcySymbolDebit").html(getCountryCurrencySymbolFromCcyLabel(res.FinRemCur));
+            $("#OBTFee").html(formatNumeric(res.TotalBTFee));
+            //- Fee **500.00** for *1 to 100,000.98*
+            //- Fee **1000.00** for *100,000.99 to 200,000.00*
+            //- Fee **1500.00** for *200,000.01 and above*    
+        } else {
+            showAlert(res.ErrorMessage);
+            $("#fxRate").html(formatNumeric(0));
+            $("#txtSendAmt").val(formatNumeric(0));
+            $("#txtDestAmt").val(formatNumeric(0));
+            $("#OBTFee").html(formatNumeric(0));
+            $("#DCFee").html(formatNumeric(0));
+        }
+    }
+
+    function getCountryBasedOnIP() {
+        console.log("IP: " + storage.getItem("ip"));
+        $.getJSON('https://ipapi.co/' + storage.getItem("ip") + '/json',
+            function (json) {
+
+                var countryCode = json.country_code;
+
+                if (countryCode === "GB") {
+                    countryCode = "UK";
+                }
+                if (countryCode != "UK" || countryCode != "ES") {
+                    cCCY = "UK";
+                    cCCY_Dest = "PH"
+                    forwardCalculate();
+                } else {
+                    cCCY = countryCode
+                    forwardCalculate();
+                }
+                getCurrency("checkrates");
+                storage.setItem("check_rate_countryCode", countryCode);
+                storage.setItem("check_rate_countryCode_dest", "PH");
+            }
+        ).fail(function(){
+            console.log("Fail to get IP informations");
+            forwardCalculate();
+            getCurrency("checkrates");
+            storage.setItem("check_rate_countryCode", "UK");
+            storage.setItem("check_rate_countryCode_dest", "PH");
+        });
+    }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+//main: ../main.scss
+
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+/// Regular font family
+$font-avenir: 'Avenir';
+
+/// Regular font family
+$font-opensans: 'Open Sans';
+
+/// @type List
+$text-font-stack: $font-opensans, 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+
+/// Code (monospace) font family
+/// @type List
+$code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
+
+/// Copy text color
+/// @type Color
+$text-color: #5a6d7e !default;
+
+/// Main brand color
+/// @type Color
+$brand-color: #237afc !default;
+
+/// Light grey
+/// @type Color
+$light-grey: #EDEDED !default;
+// $100-light-grey: #d4d4d4;
+
+/// Medium grey
+/// @type Color
+$mid-grey: #999 !default;
+
+/// Dark grey
+/// @type Color
+$dark-grey: #444 !default;
+
+
+/// Relative or absolute URL where all assets are served from
+/// @type String
+/// @example scss - When using a CDN
+///   $base-url: 'http://cdn.example.com/assets/';
+$base-url: '../assets/' !default;
+
+$black: #000;
+$white: #fff;
+
+// Blue
+
+$blue: #237afc;
+$prussian-blue: #05294b;
+$lynch-blue: #5a6d7e;
+$blue-pale: #68a5ff;
+
+// Gray
+
+$snow-white: #fcfcfc;
+$white-smoke: #F8F8F8;
+$gray-smoke: #ebebeb;
+$gainsboro: #dedede;
+$silver: #c0c0c0;
+$grey: #888888;
+$light-slate-grey: #758898;

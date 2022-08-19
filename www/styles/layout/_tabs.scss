@@ -1,0 +1,77 @@
+.tabs {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+
+  background-color: $white;
+  box-shadow: 0px 1px 12px -7px rgba(0,0,0,.75);
+
+  &-wrapper {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  &-holder {
+    display: flex;
+    justify-content: space-between;
+    padding: 9px 20px;
+    margin: 0;
+    width: 100%;
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  &-items {
+    margin-bottom: 1px;
+
+    text-align: center;
+
+    cursor: pointer;
+    user-select: none;
+
+    @include on-event {
+      .tabs-logo {
+        fill: $blue;
+      }
+
+      .tabs-title {
+        color: $blue;
+      }
+    }
+
+  }
+
+  &-logo {
+    width: 24px;
+    height: 23px;
+    margin-bottom: -7px;
+
+    fill: $silver;
+
+    transition: all .3s ease-in;
+  }
+
+  &-title {
+    margin: 0;
+
+    font-size: 13px;
+    color: $silver;
+
+    transition: all .3s ease-in;
+  }
+
+  .active-tab {
+    .tabs-logo {
+      fill: $blue;
+    }
+
+    .tabs-title {
+      color: $blue;
+    }
+  }
+}

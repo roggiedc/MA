@@ -1,0 +1,66 @@
+@charset 'UTF-8';
+
+// 1. Configuration and helpers
+@import
+  'utils/variables',
+  'utils/functions',
+  'utils/mixins';
+
+// 2. Vendors
+@import
+  'vendors/swiper',
+  'vendors/font-awesome',
+  'vendors/normalize';
+
+// 3. Base stuff
+@import
+  'base/base',
+  'base/fonts',
+  'base/typography',
+  'base/helpers';
+
+// 4. Layout-related sections
+@import
+  'layout/header',
+  'layout/footer',
+  'layout/tabs';
+
+// 5. Components
+@import
+  'components/card',
+  'components/popup-message',
+  'components/radio-div-btn',
+  'components/forms',
+  'components/buttons',
+  'components/modal';
+
+// 6. Page-specific styles
+@import
+  'pages/splash-screen',
+  'pages/home',
+  'pages/log-in',
+  'pages/check-rates',
+  'pages/change-password',
+  'pages/dashboard',
+  'pages/transaction',
+  'pages/provider',
+  'pages/settings',
+  'pages/support',
+  'pages/remit-pay',
+  'pages/sign-up',
+  'pages/beneficiary-details',
+  'pages/new-beneficiary-s1',
+  'pages/new-beneficiary-s2',
+  'pages/new-beneficiary-s3',
+  'pages/update-beneficiary',
+  'pages/delete-beneficiary-details.scss',
+  'pages/send-money-01',
+  'pages/debit-card',
+  'pages/contact-us',
+  'pages/bank-info',
+  'pages/debit-card',
+  'pages/update-profile';
+
+// 7. Themes
+@import
+  'themes/default';
