@@ -6,6 +6,7 @@
   "main": "index.js",
   "preinstall": "npx npm-force-resolutions",
   "scripts": {
+    "preinstall": "npx npm-force-resolutions",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Apache Cordova Team",
@@ -83,9 +84,7 @@
     "cordova-plugin-network-information": "^3.0.0",
     "cordova-plugin-splashscreen": "^6.0.0"
   },
-  "overrides": {
-    "recursive-readdir@^2.2.2": {
-      "minimatch": "3.0.5"
-    }
+  "resolutions": {
+    "minimatch": "5.1.0"
   }
 }

@@ -1,6 +1,7 @@
 Meterian Scan Result: <br>
 [![security status](https://www.meterian.com/badge/gh/roggiedc/MA/security)](https://www.meterian.com/report/gh/roggiedc/MA)
 [![stability status](https://www.meterian.com/badge/gh/roggiedc/MA/stability)](https://www.meterian.com/report/gh/roggiedc/MA)
+[![licensing status](https://www.meterian.com/badge/gh/roggiedc/MA/licensing)](https://www.meterian.com/report/gh/roggiedc/MA)
 
 # MA
 Mobile Applications
